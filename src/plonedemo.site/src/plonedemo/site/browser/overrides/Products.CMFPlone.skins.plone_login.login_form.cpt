@@ -277,6 +277,22 @@
           <p><a class="context autologin" data-autologin-user="manager" data-autologin-password="manager" href="#" i18n:translate="">Login as Manager</a></p>
         </div>
 
+        <!--
+        This is only inserted here because I'm to lazy to figure about how to get this js to run in a modal created by mockup
+         -->
+        <script type="text/javascript">
+            $('a.autologin').on("click", function(e) {
+                e.preventDefault();
+                var username = $(this).attr('data-autologin-user');
+                var password = $(this).attr('data-autologin-password');
+                $('input#__ac_name').click();
+                $('input#__ac_name').val(username);
+                $('input#__ac_password').click();
+                $('input#__ac_password').val(password);
+                $('.formControls input[type="submit"]').click();
+            });
+        </script>
+
 
           <tal:block replace="nothing">
             <div id="login-forgotten-password"
