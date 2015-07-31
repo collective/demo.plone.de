@@ -268,13 +268,25 @@
 
         </tal:use_iframe>
 
-        <div>
-          <p><a class="context autologin" data-autologin-user="reader" data-autologin-password="reader" href="#" i18n:translate="">Login as Reader</a></p>
-          <p><a class="context autologin" data-autologin-user="contributor" data-autologin-password="contributor" href="#" i18n:translate="">Login as Contributor</a></p>
-          <p><a class="context autologin" data-autologin-user="editor" data-autologin-password="editor" href="#" i18n:translate="">Login as Editor</a></p>
-          <p><a class="context autologin" data-autologin-user="reviewer" data-autologin-password="reviewer" href="#" i18n:translate="">Login as Reviewer</a></p>
-          <p><a class="context autologin" data-autologin-user="siteadmin" data-autologin-password="siteadmin" href="#" i18n:translate="">Login as Site Administrator</a></p>
-          <p><a class="context autologin" data-autologin-user="manager" data-autologin-password="manager" href="#" i18n:translate="">Login as Manager</a></p>
+        <div i18n:domain="plonedemo.site">
+          <p tal:replace="nothing"><a class="context autologin" data-autologin-user="reader" data-autologin-password="reader" href="#" i18n:translate="">Login as Reader</a></p>
+          <p tal:replace="nothing"><a class="context autologin" data-autologin-user="contributor" data-autologin-password="contributor" href="#" i18n:translate="">Login as Contributor</a></p>
+          <p>
+            <a class="context autologin" data-autologin-user="editor" data-autologin-password="editor" href="#" i18n:translate="">Login as Editor</a>
+            <br />
+            <span i18n:translate="">Add, edit and submit content</span>
+          </p>
+          <p>
+            <a class="context autologin" data-autologin-user="reviewer" data-autologin-password="reviewer" href="#" i18n:translate="">Login as Reviewer</a>
+            <br />
+            <span i18n:translate="">Review and publish submitted content</span>
+          </p>
+          <p tal:replace="nothing"><a class="context autologin" data-autologin-user="siteadmin" data-autologin-password="siteadmin" href="#" i18n:translate="">Login as Site Administrator</a></p>
+          <p>
+            <a class="context autologin" data-autologin-user="manager" data-autologin-password="manager" href="#" i18n:translate="">Login as Manager</a>
+            <br />
+            <span i18n:translate="">Configure the site and do anything</span>
+          </p>
         </div>
 
         <!--

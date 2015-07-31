@@ -17,4 +17,11 @@
       directory="static"
       />
 
+  <browser:view
+      name="demo-frontpage"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".frontpage.FrontPage"
+      permission="zope.Public"
+      />
+
 </configure>

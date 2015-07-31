@@ -42,4 +42,9 @@
       handler=".setuphandlers.uninstall">
   </genericsetup:importStep>
 
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="plonedemo.site"
+      provides="Products.CMFPlone.interfaces.INonInstallable" />
+
 </configure>

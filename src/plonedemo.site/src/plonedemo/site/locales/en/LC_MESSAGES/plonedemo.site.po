@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,42 +12,42 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: plonedemo.site\n"
+"Domain: DOMAIN\n"
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:277
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:277
 msgid "Add, edit and submit content"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:288
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:288
 msgid "Configure the site and do anything"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/setuphandlers.py:17
+#: plonedemo/site/setuphandlers.py:17
 msgid "Herzlich willkommen auf der Plone 5 Demo Website!"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
 msgid "Login as Editor"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:286
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:286
 msgid "Login as Manager"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
 msgid "Login as Reviewer"
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/setuphandlers.py:18
+#: plonedemo/site/setuphandlers.py:18
 msgid "Plone ist ein Open Source Content Management System, das Organisationen, Unternehmen und Privatanwendern die professionelle Erstellung und Verwaltung von Webseiten und Intranets ermöglicht."
 msgstr ""
 
-#: plonedemo.site/src/plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:282
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:282
 msgid "Review and publish submitted content"
 msgstr ""
 
 #. Default: "<p class=\"discreet\"></p> <p>Diese Demo erlaubt es Ihnen Plone 5 mit all seinen Funktionen auszuprobieren. Für diese Demo wurde eine Plone 5 Standardinstallation mit minimalen Anpassungen eingerichtet. Etwas Beispiel-Content ermöglicht es Ihnen, direkt loszulegen.</p> <p>HINWEIS: <b>Dieses Portal wird täglich gegen 03:00 Uhr (GMT+1) zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p> <p><a class=\"context\" href=\"login_form\">Jetzt einloggen!</a></p> <h2>Demo Accounts</h2> <p>Es wurden drei Benutzer mit unterschiedlichen Berechtigungen zum Testen für Sie eingerichtet. Sie können sich als normaler Benutzer, als Reviewer oder als Administrator anmelden.</p> <h4>Benutzer</h4> <p>Ein Benutzer kann Inhalt hinzufügen und einreichen.</p> <h4>Reviewer</h4> <p>Ein Reviewer kann eingereichten Inhalt veröffentlichen.</p> <h4>Administrator</h4> <p>Ein Administrator kann die Seite verwalten und hat alle Rechte.</p> <h2>Nach der Anmeldung</h2> <p>Wenn Sie sich angemeldet haben können Sie Inhalt hinzufügen, veröffentlichen oder die Einstellungen von Plone verändern.</p> <h2>Lesen Sie mehr...</h2> <ul> <li>Lesen Sie mehr über die <a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">Funktionen von Plone</a>.</li> <li>Lesen Sie die <a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Dokumentation</a>.</li> <li>Erforschen Sie die <a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">verfügbarenen Erweiterungen</a> für Plone.</li> <li>Lesen Sie über <a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\"> Erfolgreiche Projekte mit Plone</a>.</li> <li>Absolvieren Sie online ein <a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Tranining</a>.</li> </ul>"
-#: plonedemo.site/src/plonedemo/site/browser/frontpage.pt:10
+#: plonedemo/site/browser/frontpage.pt:10
 msgid "plonedemo-frontpage"
 msgstr ""
 
