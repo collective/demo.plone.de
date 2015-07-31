@@ -1,0 +1,45 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="plonedemo.site">
+
+  <includeDependencies package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="plonedemo.site"
+      directory="profiles/default"
+      description="Installs the plonedemo.site add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="plonedemo.site-postInstall"
+      title="plonedemo.site post_install import step"
+      description="Post install import step from plonedemo.site"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="plonedemo.site"
+      directory="profiles/uninstall"
+      description="Uninstalls the plonedemo.site add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="plonedemo.site-uninstall"
+      title="plonedemo.site uninstall import step"
+      description="Import step run during ininstalling plonedemo.site"
+      handler=".setuphandlers.uninstall">
+  </genericsetup:importStep>
+
+</configure>
