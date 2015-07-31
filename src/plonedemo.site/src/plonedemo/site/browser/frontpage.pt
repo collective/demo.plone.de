@@ -13,7 +13,7 @@
 
 <p>HINWEIS: <b>Dieses Portal wird täglich gegen 03:00 Uhr (GMT+1) zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p>
 
-<p><a class="context" href="login_form">Jetzt einloggen!</a></p>
+<p><a class="context pat-plone-modal" href="login_form" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}'>Jetzt einloggen!</a></p>
 
 <h2>Demo Accounts</h2>
 <p>Es wurden drei Benutzer mit unterschiedlichen Berechtigungen zum Testen für Sie eingerichtet. Sie können sich als normaler Benutzer, als Reviewer oder als Administrator anmelden.</p>

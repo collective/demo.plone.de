@@ -3,12 +3,9 @@ from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.utils import bodyfinder
 from plone import api
 from plone.app.textfield.value import RichTextValue
-from plone.registry.interfaces import IRegistry
 from plonedemo.site import _
-from zope.component import queryMultiAdapter
 from zope.component import queryUtility
 from zope.i18n.interfaces import ITranslationDomain
-from zope.i18n.locales import locales
 from zope.interface import implements
 
 
@@ -102,7 +99,10 @@ def create_demo_users():
 
 
 def modify_frontpage(portal, target_language):
-    frontpage = portal['front-page']
+    frontpage = portal.get('front-page')
+    if frontpage:
+        api.content.rename(frontpage, 'frontpage')
+    frontpage = portal.get('frontpage')
     front_text = None
     if target_language != 'en':
         util = queryUtility(ITranslationDomain, 'plonedemo.site')
