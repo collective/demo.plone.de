@@ -268,15 +268,15 @@
 
         </tal:use_iframe>
 
-            <div>
-              <p></p>
-              <p><a class="standalone autologin" href="login">Login as Reader</a></p>
-              <p><a class="standalone autologin" href="login">Login as Contributor</a></p>
-              <p><a class="standalone autologin" href="login">Login as Editor</a></p>
-              <p><a class="standalone autologin" href="login">Login as Reviewer</a></p>
-              <p><a class="standalone autologin" href="login">Login as Site Administrator</a></p>
-              <p><a class="standalone autologin" href="login">Login as Manager</a></p>
-            </div>
+        <div>
+          <p><a class="context autologin" data-autologin-user="reader" data-autologin-password="reader" href="#" i18n:translate="">Login as Reader</a></p>
+          <p><a class="context autologin" data-autologin-user="contributor" data-autologin-password="contributor" href="#" i18n:translate="">Login as Contributor</a></p>
+          <p><a class="context autologin" data-autologin-user="editor" data-autologin-password="editor" href="#" i18n:translate="">Login as Editor</a></p>
+          <p><a class="context autologin" data-autologin-user="reviewer" data-autologin-password="reviewer" href="#" i18n:translate="">Login as Reviewer</a></p>
+          <p><a class="context autologin" data-autologin-user="siteadmin" data-autologin-password="siteadmin" href="#" i18n:translate="">Login as Site Administrator</a></p>
+          <p><a class="context autologin" data-autologin-user="manager" data-autologin-password="manager" href="#" i18n:translate="">Login as Manager</a></p>
+        </div>
+
 
           <tal:block replace="nothing">
             <div id="login-forgotten-password"

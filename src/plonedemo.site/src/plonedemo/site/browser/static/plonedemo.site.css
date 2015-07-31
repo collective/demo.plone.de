@@ -1,0 +1,7 @@
+.formControls input[type="submit"],
+input#__ac_name,
+input#__ac_password,
+label[for="__ac_name"],
+label[for="__ac_password"] {
+    display: none;
+}
