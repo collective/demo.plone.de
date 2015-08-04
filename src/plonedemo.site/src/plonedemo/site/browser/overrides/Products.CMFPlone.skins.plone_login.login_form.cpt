@@ -301,7 +301,11 @@
                 $('input#__ac_name').val(username);
                 $('input#__ac_password').click();
                 $('input#__ac_password').val(password);
-                $('.formControls input[type="submit"]').click();
+                if ( $('.pattern-modal-buttons input[type="submit"]').length ) {
+                  $('.pattern-modal-buttons input[type="submit"]').click();
+                } else {
+                  $('.formControls input[type="submit"]').click();
+                }
             });
         </script>
 
