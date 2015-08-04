@@ -139,19 +139,19 @@ def import_zexp(setup, filename, target, update=True, publish=True):
     # check if file is actually in profiles/default
     path = os.path.join(os.path.abspath(
         os.path.dirname(__file__)), 'profiles', 'default', filename)
-    items = setup.listDirectory(path=None)
-    if filename not in items:
-        logger.info('File %s does not exist' % path)
+    if filename not in setup.listDirectory(path=None):
+        logger.info('zexp-file %s does not exist' % path)
         return
     portal = api.portal.get()
     if target in portal.keys():
         if not update:
-            logger.info('Skip import of zexp sind %s exists.' % target)
+            logger.info('Keeping %s. Import of zexp aborted.' % target)
             return
         else:
             logger.info('Purging %s.' % target)
             api.content.delete(portal.get(target))
 
+    # Import zexp
     portal._importObjectFromFile(path, verify=0)
 
     # publish all items!
