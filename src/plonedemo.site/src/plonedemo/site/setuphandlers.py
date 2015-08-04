@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.utils import bodyfinder
 from plone import api
@@ -7,7 +8,10 @@ from plonedemo.site import _
 from zope.component import queryUtility
 from zope.i18n.interfaces import ITranslationDomain
 from zope.interface import implements
+import os
+import logging
 
+logger = logging.getLogger(__name__)
 
 DEFAULT_EMAIL = 'demo@plone.de'
 TARGET_LANGUAGE = 'de'
@@ -28,18 +32,19 @@ class HiddenProfiles(object):
         ]
 
 
-def post_install(context):
+def post_install(setup):
     """Post install script"""
-    if context.readDataFile('plonedemosite_default.txt') is None:
+    if setup.readDataFile('plonedemosite_default.txt') is None:
         return
     portal = api.portal.get()
     create_demo_users()
     modify_frontpage(portal, TARGET_LANGUAGE)
+    import_zexp(setup, 'demo.zexp', 'demo', update=True, publish=True)
 
 
-def uninstall(context):
+def uninstall(setup):
     """Uninstall script"""
-    if context.readDataFile('plonedemosite_uninstall.txt') is None:
+    if setup.readDataFile('plonedemosite_uninstall.txt') is None:
         return
     # Do something during the uninstallation of this package
 
@@ -102,6 +107,10 @@ def modify_frontpage(portal, target_language):
     frontpage = portal.get('front-page')
     if frontpage:
         api.content.rename(frontpage, 'frontpage')
+    else:
+        if not portal.get('frontpage'):
+            api.content.create(
+                portal, 'Document', 'frontpage', FRONTPAGE_TITLE)
     frontpage = portal.get('frontpage')
     front_text = None
     if target_language != 'en':
@@ -124,3 +133,33 @@ def modify_frontpage(portal, target_language):
         'text/html',
         'text/x-html-safe'
     )
+
+
+def import_zexp(setup, filename, target, update=True, publish=True):
+    # check if file is actually in profiles/default
+    path = os.path.join(os.path.abspath(
+        os.path.dirname(__file__)), 'profiles', 'default', filename)
+    items = setup.listDirectory(path=None)
+    if filename not in items:
+        logger.info('File %s does not exist' % path)
+        return
+    portal = api.portal.get()
+    if target in portal.keys():
+        if not update:
+            logger.info('Skip import of zexp sind %s exists.' % target)
+            return
+        else:
+            logger.info('Purging %s.' % target)
+            api.content.delete(portal.get(target))
+
+    portal._importObjectFromFile(path, verify=0)
+
+    # publish all items!
+    if publish:
+        catalog = api.portal.get_tool('portal_catalog')
+        for brain in catalog():
+            item = brain.getObject()
+            try:
+                api.content.transition(item, to_state='published')
+            except WorkflowException:
+                pass
