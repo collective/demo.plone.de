@@ -8,8 +8,8 @@ from plonedemo.site import _
 from zope.component import queryUtility
 from zope.i18n.interfaces import ITranslationDomain
 from zope.interface import implements
-import os
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -140,15 +140,15 @@ def import_zexp(setup, filename, target, update=True, publish=True):
     path = os.path.join(os.path.abspath(
         os.path.dirname(__file__)), 'profiles', 'default', filename)
     if filename not in setup.listDirectory(path=None):
-        logger.info('zexp-file %s does not exist' % path)
+        logger.info('zexp-file {0} does not exist'.format(path))
         return
     portal = api.portal.get()
     if target in portal.keys():
         if not update:
-            logger.info('Keeping %s. Import of zexp aborted.' % target)
+            logger.info('Keeping {0}. Import of zexp aborted.'.format(target))
             return
         else:
-            logger.info('Purging %s.' % target)
+            logger.info('Purging {0}.'.format(target))
             api.content.delete(portal.get(target))
 
     # Import zexp
