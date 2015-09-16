@@ -38,5 +38,6 @@ lib/
 local/
 
 # Editor configs
+.settings
 .project
 .pydevproject
