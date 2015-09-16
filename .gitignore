@@ -36,3 +36,7 @@ etc/
 include/
 lib/
 local/
+
+# Editor configs
+.project
+.pydevproject
