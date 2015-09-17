@@ -62,6 +62,7 @@ def setup():
         sudo('python bootstrap.py', user=env.deploy_user)
         
         # delete .installed.cfg to get correct admin user from buildout's secret.cfg
+        sudo('rm -rf .installed.cfg', user=env.deploy_user)
                 
         # remove blobs
         sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
