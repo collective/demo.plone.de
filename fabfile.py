@@ -19,6 +19,7 @@ def demo_host(branch='master'):
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
+    env.homedir = '/home/%s/' % env.deploy_user
     env.directory = '/home/%s/demo.plone.de/' % env.deploy_user
 
 
@@ -44,6 +45,36 @@ def restart():
     """
     with cd(env.directory):
         sudo('./bin/supervisorctl restart all', user=env.deploy_user)
+
+
+@task
+def setup():
+    """
+    Setup a newly installed vm
+    """
+
+    with cd(env.homedir):
+
+        # clone repository from github
+        sudo('git clone https://github.com/collective/demo.plone.de.git', user=env.deploy_user)
+
+
+    with cd(env.directory):
+
+        # requirements
+        # sudo('python python-dev build-essential zlib1g-dev libssl-dev libxml2-dev libxslt1-dev wv poppler-utils libtiff5-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev')
+
+        # prepare buildout
+        sudo('ln -s local_production.cfg local.cfg', user=env.deploy_user)
+        sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)
+        
+        # bootstrap and run bildout once
+        sudo('python bootstrap.py', user=env.deploy_user)
+        sudo('./bin/buildout', user=env.deploy_user)
+
+        # start supervisor which starts plone instance also
+        sudo('./bin/supervisord', user=env.deploy_user)
+
 
 @task
 def update():
