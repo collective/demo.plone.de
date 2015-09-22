@@ -1,0 +1,3 @@
+<div>
+    Diese Seite verwendet die Plone-Version: <span tal:replace="view/get_plone_version"></span>
+</div>
