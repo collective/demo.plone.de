@@ -17,4 +17,17 @@
 &lt;noscript&gt;&lt;p&gt;&lt;img src="//piwik.portknox.net/piwik.php?idsite=10" style="border:0;" alt="" /&gt;&lt;/p&gt;&lt;/noscript&gt;&#13;
 &lt;!-- End Piwik Code --&gt;</value>
   </record>
+
+  <record name="plone.available_languages" interface="Products.CMFPlone.interfaces.controlpanel.ILanguageSchema" field="available_languages">
+    <value>['de', 'en']</value>
+  </record>
+
+  <record name="plone.default_language" interface="Products.CMFPlone.interfaces.controlpanel.ILanguageSchema" field="default_language">
+    <value>de</value>
+  </record>
+
+  <record name="plone.site_title" interface="Products.CMFPlone.interfaces.controlpanel.ISiteSchema" field="site_title">
+    <value>demo.plone.de</value>
+  </record>
+
 </registry>

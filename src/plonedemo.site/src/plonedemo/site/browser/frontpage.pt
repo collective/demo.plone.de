@@ -11,7 +11,7 @@
 
 <p>Diese Demo erlaubt es Ihnen Plone 5 mit all seinen Funktionen auszuprobieren. Für diese Demo wurde eine Plone 5 Standardinstallation mit minimalen Anpassungen eingerichtet. Etwas Beispiel-Content ermöglicht es Ihnen, direkt loszulegen.</p>
 
-<p>HINWEIS: <b>Dieses Portal wird täglich gegen 03:00 Uhr (GMT+1) zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p>
+<p>HINWEIS: <b>Dieses Portal wird alle 4 Stunden zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p>
 
 <p><a class="context pat-plone-modal" href="login_form" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}'>Jetzt einloggen!</a></p>
 
@@ -19,10 +19,10 @@
 <p>Es wurden drei Benutzer mit unterschiedlichen Berechtigungen zum Testen für Sie eingerichtet. Sie können sich als normaler Benutzer, als Reviewer oder als Administrator anmelden.</p>
 
 <h4>Benutzer</h4>
-<p>Ein Benutzer kann Inhalt hinzufügen und einreichen.</p>
+<p>Ein Benutzer kann Inhalte hinzufügen und einreichen.</p>
 
 <h4>Reviewer</h4>
-<p>Ein Reviewer kann eingereichten Inhalt veröffentlichen.</p>
+<p>Ein Reviewer kann eingereichte Inhalte veröffentlichen.</p>
 
 <h4>Administrator</h4>
 <p>Ein Administrator kann die Seite verwalten und hat alle Rechte.</p>
@@ -32,6 +32,7 @@
 
 <h2>Lesen Sie mehr...</h2>
 <ul>
+    <li>Was ist neu in <a class="link-plain" href="http://plone.com/5" target="_blank">Plone 5</a>?</li>
     <li>Lesen Sie mehr über die <a class="link-plain" href="http://plone.com/features/" target="_blank">Funktionen von Plone</a>.</li>
     <li>Lesen Sie die <a class="link-plain" href="http://plone.org/documentation/" target="_blank">Plone-Dokumentation</a>.</li>
     <li>Erforschen Sie die <a class="link-plain" href="http://plone.org/products" target="_blank">verfügbarenen Erweiterungen</a> für Plone.</li>
