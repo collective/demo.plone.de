@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces import INonInstallable
+from Products.CMFPlone.interfaces import ILanguage
 from Products.CMFPlone.utils import bodyfinder
 from plone import api
+from plone.app.multilingual.browser.setup import SetupMultilingualSite
+from plone.app.multilingual.interfaces import ITranslationManager
 from plone.app.textfield.value import RichTextValue
 from plonedemo.site import _
 from zope.component import queryUtility
@@ -15,18 +18,14 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_EMAIL = 'demo@plone.de'
 TARGET_LANGUAGE = 'de'
-FRONTPAGE_TITLE = _(u'Herzlich willkommen auf der Plone 5 Demo Website!')
-FRONTPAGE_DESCRIPTION = _(u'Plone ist ein Open Source Content Management System, das Organisationen, Unternehmen und Privatanwendern die professionelle Erstellung und Verwaltung von Webseiten und Intranets ermöglicht.')  # noqa
+FRONTPAGE_TITLE = _(u'Welcome to Plone 5')
+FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
 
 
 class HiddenProfiles(object):
     implements(INonInstallable)
 
     def getNonInstallableProfiles(self):
-        """
-        Prevents all profiles but 'plone-content' from showing up in the
-        profile list when creating a Plone site.
-        """
         return [
             u'plondemo.site:uninstall',
         ]
@@ -37,9 +36,29 @@ def post_install(setup):
     if setup.readDataFile('plonedemosite_default.txt') is None:
         return
     portal = api.portal.get()
+    remove_content(portal)
     create_demo_users()
-    modify_frontpage(portal, TARGET_LANGUAGE)
-    import_zexp(setup, 'demo.zexp', 'demo', update=True, publish=True)
+    languages = api.portal.get_registry_record('plone.available_languages')
+    setupTool = SetupMultilingualSite()
+    setupTool.setupSite(portal)
+    for index, lang in enumerate(languages):
+        container = portal[lang]
+        frontpage = create_frontpage(
+            portal, container=container, target_language=lang)
+        container.setDefaultPage('frontpage')
+        if index > 0:
+            previous_lang = languages[index-1]
+            previous_frontpage = portal[previous_lang]['frontpage']
+            ITranslationManager(frontpage).register_translation(
+                previous_lang, previous_frontpage)
+        import_zexp(
+            setup,
+            filename='demo_%s.zexp' % lang,
+            container=container,
+            name='demo',
+            update=True,
+            publish=True,
+        )
 
 
 def uninstall(setup):
@@ -47,6 +66,17 @@ def uninstall(setup):
     if setup.readDataFile('plonedemosite_uninstall.txt') is None:
         return
     # Do something during the uninstallation of this package
+
+
+def remove_content(portal):
+    default_content = [
+        'front-page',
+        'Members',
+        'news',
+        'events',
+    ]
+    for item in default_content:
+        api.content.delete(portal[item])
 
 
 def create_demo_users():
@@ -71,7 +101,7 @@ def create_demo_users():
          'password': 'reviewer',
          'fullname': 'Reviewer',
          'groups': ['Reviewers'],
-         'roles': ('Reviewer', ),
+         'roles': ('Reader', 'Reviewer', 'Editor', 'Member'),
          },
         # {'login': 'siteadmin',
         #  'password': 'siteadmin',
@@ -103,61 +133,68 @@ def create_demo_users():
             )
 
 
-def modify_frontpage(portal, target_language):
-    frontpage = portal.get('front-page')
-    if frontpage:
-        api.content.rename(frontpage, 'frontpage')
-    else:
-        if not portal.get('frontpage'):
-            api.content.create(
-                portal, 'Document', 'frontpage', FRONTPAGE_TITLE)
-    frontpage = portal.get('frontpage')
+def create_frontpage(portal, container, target_language):
+    if not container.get('frontpage'):
+        frontpage = api.content.create(
+            container, 'Document', 'frontpage', FRONTPAGE_TITLE)
+        api.content.transition(frontpage, to_state='published')
+    frontpage = container.get('frontpage')
     front_text = None
+    util = queryUtility(ITranslationDomain, 'plonedemo.site')
+    frontpage.title = util.translate(FRONTPAGE_TITLE,
+                                     target_language=target_language)
+    frontpage.description = util.translate(FRONTPAGE_DESCRIPTION,
+                                           target_language=target_language)
+
     if target_language != 'en':
-        util = queryUtility(ITranslationDomain, 'plonedemo.site')
-        if util is not None:
-            translated_text = util.translate(
-                u'plonedemo-frontpage',
-                target_language=target_language)
-            if translated_text != u'plonedemo-frontpage':
-                front_text = translated_text
+        # get text from the translation-machinery
+        translated_text = util.translate(
+            _('plonedemo_frontpage'), target_language=target_language)
+        if translated_text != u'plonedemo_frontpage':
+            front_text = translated_text
+
     request = getattr(portal, 'REQUEST', None)
     if front_text is None and request is not None:
+        # get text from rendering the template sice I cannot find a way to
+        # return the default
         view = api.content.get_view('demo-frontpage', portal, request)
-        if view is not None:
-            front_text = bodyfinder(view.index()).strip()
-    frontpage.title = FRONTPAGE_TITLE
-    frontpage.description = FRONTPAGE_DESCRIPTION
+        front_text = bodyfinder(view.index()).strip()
+
     frontpage.text = RichTextValue(
         front_text,
         'text/html',
         'text/x-html-safe'
     )
+    ILanguage(frontpage).set_language(target_language)
+    return frontpage
 
 
-def import_zexp(setup, filename, target, update=True, publish=True):
+def import_zexp(setup, filename, container, name, update=True, publish=True):
+    """Import a zexp
+    """
     # check if file is actually in profiles/default
     path = os.path.join(os.path.abspath(
         os.path.dirname(__file__)), 'profiles', 'default', filename)
     if filename not in setup.listDirectory(path=None):
         logger.info('zexp-file {0} does not exist'.format(path))
         return
-    portal = api.portal.get()
-    if target in portal.keys():
+    if name in container.keys():
         if not update:
-            logger.info('Keeping {0}. Import of zexp aborted.'.format(target))
+            logger.info('Keeping {0}. Import of zexp aborted.'.format(name))
             return
         else:
-            logger.info('Purging {0}.'.format(target))
-            api.content.delete(portal.get(target))
+            logger.info('Purging {0}.'.format(name))
+            api.content.delete(container.get(name))
 
     # Import zexp
-    portal._importObjectFromFile(path, verify=0)
+    container._importObjectFromFile(str(path), verify=0)
 
     # publish all items!
     if publish:
+        new = container[name]
+        path = '/'.join(new.getPhysicalPath())
         catalog = api.portal.get_tool('portal_catalog')
-        for brain in catalog():
+        for brain in catalog(path={'query': path, 'depth': 2}):
             item = brain.getObject()
             try:
                 api.content.transition(item, to_state='published')
