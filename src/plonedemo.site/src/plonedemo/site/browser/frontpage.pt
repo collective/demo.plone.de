@@ -7,37 +7,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
-<body i18n:translate="plonedemo-frontpage"><p class="discreet">
+<body i18n:translate="plonedemo_frontpage">
 
-<p>Diese Demo erlaubt es Ihnen Plone 5 mit all seinen Funktionen auszuprobieren. Für diese Demo wurde eine Plone 5 Standardinstallation mit minimalen Anpassungen eingerichtet. Etwas Beispiel-Content ermöglicht es Ihnen, direkt loszulegen.</p>
+<p>Here you can test Plone 5</p>
 
-<p>HINWEIS: <b>Dieses Portal wird alle 4 Stunden zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p>
+<p><b>This site will be reset every 4 hours.</b></p>
 
-<p><a class="context pat-plone-modal" href="login_form" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}'>Jetzt einloggen!</a></p>
+<p><a class="context pat-plone-modal" href="login_form" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}'>Log in now!</a></p>
 
 <h2>Demo Accounts</h2>
-<p>Es wurden drei Benutzer mit unterschiedlichen Berechtigungen zum Testen für Sie eingerichtet. Sie können sich als normaler Benutzer, als Reviewer oder als Administrator anmelden.</p>
 
-<h4>Benutzer</h4>
-<p>Ein Benutzer kann Inhalte hinzufügen und einreichen.</p>
+<h4>Editor</h4>
+<p>Can create, edit and submit new content.</p>
 
 <h4>Reviewer</h4>
-<p>Ein Reviewer kann eingereichte Inhalte veröffentlichen.</p>
+<p>Can edit content and publish submitted content.</p>
 
-<h4>Administrator</h4>
-<p>Ein Administrator kann die Seite verwalten und hat alle Rechte.</p>
+<h4>Manager</h4>
+<p>Can manage content, users, addons and settings.</p>
 
-<h2>Nach der Anmeldung</h2>
-<p>Wenn Sie sich angemeldet haben können Sie Inhalt hinzufügen, veröffentlichen oder die Einstellungen von Plone verändern.</p>
-
-<h2>Lesen Sie mehr...</h2>
+<h2>Want to know more?</h2>
 <ul>
-    <li>Was ist neu in <a class="link-plain" href="http://plone.com/5" target="_blank">Plone 5</a>?</li>
-    <li>Lesen Sie mehr über die <a class="link-plain" href="http://plone.com/features/" target="_blank">Funktionen von Plone</a>.</li>
-    <li>Lesen Sie die <a class="link-plain" href="http://plone.org/documentation/" target="_blank">Plone-Dokumentation</a>.</li>
-    <li>Erforschen Sie die <a class="link-plain" href="http://plone.org/products" target="_blank">verfügbarenen Erweiterungen</a> für Plone.</li>
-    <li>Lesen Sie über <a class="link-plain" href="http://plone.com/success-stories" target="_blank"> Erfolgreiche Projekte mit Plone</a>.</li>
-    <li>Absolvieren Sie online ein <a class="link-plain" href="http://training.plone.org/5" target="_blank">Plone-Tranining</a>.</li>
+    <li><a class="link-plain" href="http://plone.com/5" target="_blank">What's new in Plone 5?</a></li>
+    <li><a class="link-plain" href="http://plone.com/features/" target="_blank">The features of Plone</a></li>
+    <li><a class="link-plain" href="http://plone.org/documentation/" target="_blank">Plone-Documentation</a></li>
+    <li><a class="link-plain" href="http://plone.com/success-stories" target="_blank">Success stories</a></li>
+    <li><a class="link-plain" href="http://training.plone.org/5" target="_blank">Plone-Training</a></li>
+    <li><a class="link-plain" href="http://plone.org/products" target="_blank">Add ons for Plone</a></li>
 </ul>
 
 </body>
