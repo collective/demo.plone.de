@@ -33,7 +33,7 @@
 
   <record interface="plone.app.multilingual.interfaces.IMultiLanguageExtraOptionsSchema"
           name="plone.default_language">
-    <value>de</value>
+    <value>en</value>
   </record>
 
   <record interface="plone.app.multilingual.interfaces.IMultiLanguageExtraOptionsSchema"
