@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-25 10:45+0000\n"
+"POT-Creation-Date: 2015-12-25 20:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,11 @@ msgstr "Als Reviewer einloggen"
 msgid "Review and publish submitted content"
 msgstr "Eingereichte Inhalte bearbeiten und veröffentlichen"
 
-#: plonedemo/site/setuphandlers.py:22
+#: plonedemo/site/setuphandlers.py:21
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr "Das ultimative Open Source Enterprise CMS"
 
-#: plonedemo/site/setuphandlers.py:21
+#: plonedemo/site/setuphandlers.py:20
 msgid "Welcome to Plone 5"
 msgstr "Willkommen bei Plone 5"
 
