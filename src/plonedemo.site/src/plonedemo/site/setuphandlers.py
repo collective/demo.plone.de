@@ -41,19 +41,26 @@ def post_install(setup):
     languages = api.portal.get_registry_record('plone.available_languages')
     setupTool = SetupMultilingualSite()
     setupTool.setupSite(portal)
-    for index, lang in enumerate(languages):
-        container = portal[lang]
+    for language in languages:
+        container = portal[language]
+
+        # Create frontpage for language
         frontpage = create_frontpage(
-            portal, container=container, target_language=lang)
+            portal, container=container, target_language=language)
         container.setDefaultPage('frontpage')
-        if index > 0:
-            previous_lang = languages[index-1]
-            previous_frontpage = portal[previous_lang]['frontpage']
-            ITranslationManager(frontpage).register_translation(
-                previous_lang, previous_frontpage)
+        ILanguage(frontpage).set_language(language)
+
+        # Link the new frontpage as a translation to all existing items
+        for lang in languages:
+            existing_frontpage = portal[lang].get('frontpage')
+            if existing_frontpage:
+                ITranslationManager(existing_frontpage).register_translation(
+                    language, frontpage)
+
+        # Import zexp for language
         import_zexp(
             setup,
-            filename='demo_%s.zexp' % lang,
+            filename='demo_%s.zexp' % language,
             container=container,
             name='demo',
             update=True,
@@ -149,11 +156,11 @@ def create_frontpage(portal, container, target_language):
     if target_language != 'en':
         # get frontpage-text from the translation-machinery
         # to edit it you have to modify
-        # plonedemo/site/locales/de/LC_MESSAGES/plonedemo.site.po
-        translated_text = util.translate(
+    # plonedemo/site/locales/de/LC_MESSAGES/plonedemo.site.po
+    translated_text = util.translate(
             'plonedemo_frontpage', target_language=target_language)
-        if translated_text != u'plonedemo_frontpage':
-            front_text = translated_text
+    if translated_text != u'plonedemo_frontpage':
+        front_text = translated_text
 
     request = getattr(portal, 'REQUEST', None)
     if front_text is None and request is not None:
