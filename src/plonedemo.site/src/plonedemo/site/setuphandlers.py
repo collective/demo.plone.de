@@ -17,7 +17,6 @@ import os
 logger = logging.getLogger(__name__)
 
 DEFAULT_EMAIL = 'demo@plone.de'
-TARGET_LANGUAGE = 'de'
 FRONTPAGE_TITLE = _(u'Welcome to Plone 5')
 FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
 
@@ -141,47 +140,44 @@ def create_demo_users():
 
 
 def create_frontpage(portal, container, target_language):
+    """Create a frontpage. The text is the translation or default of
+    the view '@@demo-frontpage'.
+    """
     if not container.get('frontpage'):
         frontpage = api.content.create(
             container, 'Document', 'frontpage', FRONTPAGE_TITLE)
         api.content.transition(frontpage, to_state='published')
     frontpage = container.get('frontpage')
-    front_text = None
     util = queryUtility(ITranslationDomain, 'plonedemo.site')
-    frontpage.title = util.translate(FRONTPAGE_TITLE,
-                                     target_language=target_language)
-    frontpage.description = util.translate(FRONTPAGE_DESCRIPTION,
-                                           target_language=target_language)
-
-    if target_language != 'en':
-        # get frontpage-text from the translation-machinery
-        # to edit it you have to modify
+    frontpage.title = util.translate(
+        FRONTPAGE_TITLE, target_language=target_language)
+    frontpage.description = util.translate(
+        FRONTPAGE_DESCRIPTION, target_language=target_language)
+    front_text = None
+    # Get frontpage-text from the translation-machinery.
+    # To edit it you have to modify
     # plonedemo/site/locales/de/LC_MESSAGES/plonedemo.site.po
     translated_text = util.translate(
-            'plonedemo_frontpage', target_language=target_language)
+        msgid='plonedemo_frontpage',
+        target_language=target_language)
     if translated_text != u'plonedemo_frontpage':
         front_text = translated_text
+    if not front_text:
+        # Get text from reading the template-file since I can't find a way to
+        # get the english default text using util.translate()
+        path = os.path.join(os.path.abspath(
+            os.path.dirname(__file__)), 'browser', 'frontpage.pt')
+        frontpage_raw = open(path).read()
+        front_text = bodyfinder(frontpage_raw).strip()
 
-    request = getattr(portal, 'REQUEST', None)
-    if front_text is None and request is not None:
-        # get text from rendering the template sice I cannot find a way to
-        # return the default
-        view = api.content.get_view('demo-frontpage', portal, request)
-        front_text = bodyfinder(view.index()).strip()
-
-    frontpage.text = RichTextValue(
-        front_text,
-        'text/html',
-        'text/x-html-safe'
-    )
-    ILanguage(frontpage).set_language(target_language)
+    frontpage.text = RichTextValue(front_text, 'text/html', 'text/x-html-safe')
     return frontpage
 
 
 def import_zexp(setup, filename, container, name, update=True, publish=True):
     """Import a zexp
     """
-    # check if file is actually in profiles/default
+    # Check if the zexp-file is actually in profiles/default
     path = os.path.join(os.path.abspath(
         os.path.dirname(__file__)), 'profiles', 'default', filename)
     if filename not in setup.listDirectory(path=None):
