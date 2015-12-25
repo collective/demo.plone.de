@@ -5,3 +5,13 @@ label[for="__ac_name"],
 label[for="__ac_password"] {
     display: none;
 }
+
+body.userrole-authenticated .for_autheticated,
+body.userrole-anonymous .for_anonymous {
+    display: block;
+}
+
+body.userrole-authenticated .for_anonymous,
+body.userrole-anonymous .for_autheticated {
+    display: none;
+}

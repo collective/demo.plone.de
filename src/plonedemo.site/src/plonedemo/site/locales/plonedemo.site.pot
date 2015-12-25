@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-30 17:09+0000\n"
+"POT-Creation-Date: 2015-12-25 10:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,9 +49,8 @@ msgstr ""
 msgid "Welcome to Plone 5"
 msgstr ""
 
-#. Default: "<p>Here you can test Plone 5</p> <p><b>This site will be reset every 4 hours.</b></p> <p><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal=\"{\"prependContent\": \".portalMessage\", \"title\": \"Log in\", \"width\": \"26em\"}\">Log in now!</a></p> <h2>Demo Accounts</h2> <h4>Editor</h4> <p>Can create, edit and submit new content.</p> <h4>Reviewer</h4> <p>Can edit content and publish submitted content.</p> <h4>Manager</h4> <p>Can manage content, users, addons and settings.</p> <h2>Want to know more?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/5\" target=\"_blank\">What's new in Plone 5?</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">The features of Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Documentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Success stories</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Add ons for Plone</a></li> </ul>"
+#. Default: "<p>Here you can test Plone 5</p> <p><b>This site will be reset every 4 hours.</b></p> <p class=\"for_anonymous\"><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal=\"{\"prependContent\": \".portalMessage\", \"title\": \"Log in\", \"width\": \"26em\"}\">Log in now!</a></p> <p class=\"for_autheticated\"><a class=\"context\" href=\"logout\">Log out</a></p> <h2>Demo Accounts</h2> <h4>Editor</h4> <p>Can create, edit and submit new content.</p> <h4>Reviewer</h4> <p>Can edit content and publish submitted content.</p> <h4>Manager</h4> <p>Can manage content, users, addons and settings.</p> <h2>Want to know more?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">The features of Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Documentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Success stories</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Add ons for Plone</a></li> </ul>"
 #: plonedemo.site/src/plonedemo/site/browser/frontpage.pt:10
-#: plonedemo.site/src/plonedemo/site/setuphandlers.py:152
 msgid "plonedemo_frontpage"
 msgstr ""
 
