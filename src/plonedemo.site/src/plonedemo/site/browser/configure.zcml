@@ -19,7 +19,7 @@
 
   <browser:view
       name="demo-frontpage"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
       class=".frontpage.FrontPage"
       permission="zope.Public"
       />
