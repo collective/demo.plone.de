@@ -184,7 +184,7 @@ def import_zexp(setup, filename, container, name, update=True, publish=True):
             return
         else:
             logger.info('Purging {0}.'.format(name))
-            api.content.delete(container.get(name))
+            api.content.delete(container.get(name), check_linkintegrity=False)
 
     # Import zexp
     container._importObjectFromFile(str(path), verify=0)
