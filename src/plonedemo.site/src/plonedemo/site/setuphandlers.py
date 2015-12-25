@@ -147,9 +147,11 @@ def create_frontpage(portal, container, target_language):
                                            target_language=target_language)
 
     if target_language != 'en':
-        # get text from the translation-machinery
+        # get frontpage-text from the translation-machinery
+        # to edit it you have to modify
+        # plonedemo/site/locales/de/LC_MESSAGES/plonedemo.site.po
         translated_text = util.translate(
-            _('plonedemo_frontpage'), target_language=target_language)
+            'plonedemo_frontpage', target_language=target_language)
         if translated_text != u'plonedemo_frontpage':
             front_text = translated_text
 
