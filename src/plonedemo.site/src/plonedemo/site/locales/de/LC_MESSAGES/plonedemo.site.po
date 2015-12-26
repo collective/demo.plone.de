@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-31 13:25+0000\n"
+"POT-Creation-Date: 2015-12-25 20:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,13 +22,9 @@ msgstr "Inhalte erstellen, bearbeiten und einreichen"
 msgid "Configure the site and do anything"
 msgstr "Seite verwalten (hat alle Rechte)"
 
-#: plonedemo/site/setuphandlers.py:17
-msgid "Herzlich willkommen auf der Plone 5 Demo Website!"
-msgstr ""
-
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
 msgid "Login as Editor"
-msgstr "Als Benutzer einloggen"
+msgstr "Als Redakteur einloggen"
 
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:286
 msgid "Login as Manager"
@@ -38,16 +34,20 @@ msgstr "Als Administrator einloggen"
 msgid "Login as Reviewer"
 msgstr "Als Reviewer einloggen"
 
-#: plonedemo/site/setuphandlers.py:18
-msgid "Plone ist ein Open Source Content Management System, das Organisationen, Unternehmen und Privatanwendern die professionelle Erstellung und Verwaltung von Webseiten und Intranets ermöglicht."
-msgstr ""
-
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:282
 msgid "Review and publish submitted content"
 msgstr "Eingereichte Inhalte bearbeiten und veröffentlichen"
 
-#. Default: "<p class=\"discreet\"></p> <p>Diese Demo erlaubt es Ihnen Plone 5 mit all seinen Funktionen auszuprobieren. Für diese Demo wurde eine Plone 5 Standardinstallation mit minimalen Anpassungen eingerichtet. Etwas Beispiel-Content ermöglicht es Ihnen, direkt loszulegen.</p> <p>HINWEIS: <b>Dieses Portal wird täglich gegen 03:00 Uhr (GMT+1) zurückgesetzt.</b> Es werden keine E-Mails vom Portal versendet um Missbrauch durch Spammer zu verhindern. Bitte beachten Sie, dass auch andere Benutzer diese Demo zeitgleich nutzen können.</p> <p><a class=\"context\" href=\"login_form\">Jetzt einloggen!</a></p> <h2>Demo Accounts</h2> <p>Es wurden drei Benutzer mit unterschiedlichen Berechtigungen zum Testen für Sie eingerichtet. Sie können sich als normaler Benutzer, als Reviewer oder als Administrator anmelden.</p> <h4>Benutzer</h4> <p>Ein Benutzer kann Inhalt hinzufügen und einreichen.</p> <h4>Reviewer</h4> <p>Ein Reviewer kann eingereichten Inhalt veröffentlichen.</p> <h4>Administrator</h4> <p>Ein Administrator kann die Seite verwalten und hat alle Rechte.</p> <h2>Nach der Anmeldung</h2> <p>Wenn Sie sich angemeldet haben können Sie Inhalt hinzufügen, veröffentlichen oder die Einstellungen von Plone verändern.</p> <h2>Lesen Sie mehr...</h2> <ul> <li>Lesen Sie mehr über die <a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">Funktionen von Plone</a>.</li> <li>Lesen Sie die <a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Dokumentation</a>.</li> <li>Erforschen Sie die <a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">verfügbarenen Erweiterungen</a> für Plone.</li> <li>Lesen Sie über <a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\"> Erfolgreiche Projekte mit Plone</a>.</li> <li>Absolvieren Sie online ein <a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Tranining</a>.</li> </ul>"
+#: plonedemo/site/setuphandlers.py:21
+msgid "The ultimate Open Source Enterprise CMS"
+msgstr "Das ultimative Open Source Enterprise CMS"
+
+#: plonedemo/site/setuphandlers.py:20
+msgid "Welcome to Plone 5"
+msgstr "Willkommen bei Plone 5"
+
+#. Default: "<p>Here you can test Plone 5</p> <p><b>This site will be reset every 4 hours.</b></p> <p class=\"for_anonymous\"><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal=\"{\"prependContent\": \".portalMessage\", \"title\": \"Log in\", \"width\": \"26em\"}\">Log in now!</a></p> <p class=\"for_autheticated\"><a class=\"context\" href=\"logout\">Log out</a></p> <h2>Demo Accounts</h2> <h4>Editor</h4> <p>Can create, edit and submit new content.</p> <h4>Reviewer</h4> <p>Can edit content and publish submitted content.</p> <h4>Manager</h4> <p>Can manage content, users, addons and settings.</p> <h2>Want to know more?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">The features of Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Documentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Success stories</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Add ons for Plone</a></li> </ul>"
 #: plonedemo/site/browser/frontpage.pt:10
-msgid "plonedemo-frontpage"
-msgstr ""
+msgid "plonedemo_frontpage"
+msgstr "<p>Hier können Sie Plone 5 testen</p> <p><b>Diese Seite wird alle 4 Stunden zurückgesetzt.</b></p> <p class=\"for_anonymous\"><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal='{\"prependContent\": \".portalMessage\", \"title\": \"Anmelden\", \"width\": \"26em\"}'>Jetzt einloggen!</a></p> <p class=\"for_autheticated\"><a class=\"context\" href=\"logout\">Ausloggen</a></p> <h2>Demo Benutzerkonten</h2> <h4>Redakteur</h4> <p>Kann Inhalte erstellen, bearbeiten und einreichen.</p> <h4>Reviewer</h4> <p>Kann eingereichte Inhalte bearbeiten und veröffentlichen.</p> <h4>Manager</h4> <p>Kann Inhalte, Benutzer, Ereweiterungn und Einstellungen verwalten.</p> <h2>Wollen Sie mehr erfahren?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">Die Features von Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Dokumentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Erfolgreiche Projekte mit Plone</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Erweiterungen für Plone</a></li> </ul>"
 

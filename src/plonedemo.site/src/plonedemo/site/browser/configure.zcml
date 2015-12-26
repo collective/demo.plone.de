@@ -19,17 +19,17 @@
 
   <browser:view
       name="demo-frontpage"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
       class=".frontpage.FrontPage"
       permission="zope.Public"
       />
 
-    <browser:viewlet
-        name="demo.version_viewlet"
-        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-        class=".viewlets.DemoVersionViewlet"
-        permission="zope2.View"
-        layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
-        />
+  <browser:viewlet
+      name="demo.version_viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.DemoVersionViewlet"
+      permission="zope2.View"
+      layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
+      />
 
 </configure>
