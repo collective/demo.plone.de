@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-25 20:46+0000\n"
+"POT-Creation-Date: 2015-12-28 11:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,40 +14,106 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:277
-msgid "Add, edit and submit content"
-msgstr "Inhalte erstellen, bearbeiten und einreichen"
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:17
+msgid "About this site"
+msgstr "Über diese Seite"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:288
-msgid "Configure the site and do anything"
-msgstr "Seite verwalten (hat alle Rechte)"
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:29
+msgid "Add ons for Plone"
+msgstr "Erweiterungen für Plone"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:42
+msgid "Editor"
+msgstr "Redakteur"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:40
+msgid "Editor-in-chief"
+msgstr "Chefredakteur"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:33
+msgid "Log in now!"
+msgstr "Jetzt einloggen!"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:35
+msgid "Log out"
+msgstr "Ausloggen"
+
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:283
 msgid "Login as Editor"
 msgstr "Als Redakteur einloggen"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:286
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:278
+msgid "Login as Editor-in-chief"
+msgstr "Als Chefredakteur einloggen"
+
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:273
 msgid "Login as Manager"
 msgstr "Als Administrator einloggen"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
-msgid "Login as Reviewer"
-msgstr "Als Reviewer einloggen"
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:38
+msgid "Manager"
+msgstr "Administrator"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:282
-msgid "Review and publish submitted content"
-msgstr "Eingereichte Inhalte bearbeiten und veröffentlichen"
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:13
+msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
+msgstr "Plone &mdash; Das ultimative Open Source Enterprise CMS"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:26
+msgid "Plone-Documentation"
+msgstr "Plone-Dokumentation"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:28
+msgid "Plone-Training"
+msgstr ""
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
+msgid "Success stories"
+msgstr "Erfolgreiche Projekte mit Plone"
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:25
+msgid "The features of Plone"
+msgstr "Die Funktionen von Plone"
 
 #: plonedemo/site/setuphandlers.py:21
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr "Das ultimative Open Source Enterprise CMS"
 
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:18
+msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every 4 hours."
+msgstr "Auf dieser Demo-Webseite können Sie Plone ${plone_version} testen. Die Inhalte werden alle 4 Stunden zurückgesetzt."
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
+msgid "This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
+msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Verbesserungsvorschläge und Probleme können Sie <a href=\"https://github.com/collective/demo.plone.de/issues\">auf Github melden</a>."
+
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:23
+msgid "Want to know more?"
+msgstr "Sie wollen mehr erfahren?"
+
 #: plonedemo/site/setuphandlers.py:20
 msgid "Welcome to Plone 5"
 msgstr "Willkommen bei Plone 5"
 
-#. Default: "<p>Here you can test Plone 5</p> <p><b>This site will be reset every 4 hours.</b></p> <p class=\"for_anonymous\"><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal=\"{\"prependContent\": \".portalMessage\", \"title\": \"Log in\", \"width\": \"26em\"}\">Log in now!</a></p> <p class=\"for_autheticated\"><a class=\"context\" href=\"logout\">Log out</a></p> <h2>Demo Accounts</h2> <h4>Editor</h4> <p>Can create, edit and submit new content.</p> <h4>Reviewer</h4> <p>Can edit content and publish submitted content.</p> <h4>Manager</h4> <p>Can manage content, users, addons and settings.</p> <h2>Want to know more?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">The features of Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Documentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Success stories</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Add ons for Plone</a></li> </ul>"
-#: plonedemo/site/browser/frontpage.pt:10
+#. Default: "Create, edit and submit content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
+msgid "description_editor"
+msgstr "Inhalte erstellen, bearbeiten und einreichen."
+
+#. Default: "Create, edit and publish content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
+msgid "description_editor_in_chief"
+msgstr "Inhalte erstellen, bearbeiten und veröffentlichen."
+
+#. Default: "Manage content, users, addons and settings."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:39
+msgid "description_manager"
+msgstr "Inhalte, Benutzer, Erweiterungen und Einstellungen verwalten."
+
+#. Default: "<p>Edit this site and test Plone 5 now!</p>"
+#: plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
-msgstr "<p>Hier können Sie Plone 5 testen</p> <p><b>Diese Seite wird alle 4 Stunden zurückgesetzt.</b></p> <p class=\"for_anonymous\"><a class=\"context pat-plone-modal\" href=\"login_form\" data-pat-plone-modal='{\"prependContent\": \".portalMessage\", \"title\": \"Anmelden\", \"width\": \"26em\"}'>Jetzt einloggen!</a></p> <p class=\"for_autheticated\"><a class=\"context\" href=\"logout\">Ausloggen</a></p> <h2>Demo Benutzerkonten</h2> <h4>Redakteur</h4> <p>Kann Inhalte erstellen, bearbeiten und einreichen.</p> <h4>Reviewer</h4> <p>Kann eingereichte Inhalte bearbeiten und veröffentlichen.</p> <h4>Manager</h4> <p>Kann Inhalte, Benutzer, Ereweiterungn und Einstellungen verwalten.</p> <h2>Wollen Sie mehr erfahren?</h2> <ul> <li><a class=\"link-plain\" href=\"http://plone.com/features/\" target=\"_blank\">Die Features von Plone</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/documentation/\" target=\"_blank\">Plone-Dokumentation</a></li> <li><a class=\"link-plain\" href=\"http://plone.com/success-stories\" target=\"_blank\">Erfolgreiche Projekte mit Plone</a></li> <li><a class=\"link-plain\" href=\"http://training.plone.org/5\" target=\"_blank\">Plone-Training</a></li> <li><a class=\"link-plain\" href=\"http://plone.org/products\" target=\"_blank\">Erweiterungen für Plone</a></li> </ul>"
+msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone 5 jetzt!</p>"
 

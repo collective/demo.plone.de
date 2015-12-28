@@ -15,3 +15,15 @@ body.userrole-authenticated .for_anonymous,
 body.userrole-anonymous .for_autheticated {
     display: none;
 }
+
+.principal.plonedemo {
+    padding: 20px 0;
+}
+
+.principal.plonedemo h2 {
+    margin: 20px 0;
+}
+
+.principal.plonedemo h3 {
+    margin-top: 0;
+}

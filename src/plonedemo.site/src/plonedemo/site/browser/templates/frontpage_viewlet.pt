@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      tal:omit-tag=""
+      i18n:domain="plonedemo.site"
+      tal:condition="view/show">
+
+<div class="principal plonedemo" role="complementary">
+    <div class="container">
+        <div>
+            <h2 i18n:translate="">Plone &mdash; The ultimate Open Source Enterprise CMS</h2>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <h3 i18n:translate="">About this site</h3>
+                    <p i18n:translate="">This is a demo-site where you can test Plone <span tal:replace="view/get_plone_version" i18n:name="plone_version"></span>.
+                    The site will be reset every 4 hours.</p>
+                    <p i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6  col-md-4">
+                    <h3 i18n:translate="">Want to know more?</h3>
+                    <ul>
+                        <li><a i18n:translate="" class="link-plain" href="http://plone.com/features/" target="_blank">The features of Plone</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://plone.org/documentation/" target="_blank">Plone-Documentation</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://plone.com/success-stories" target="_blank">Success stories</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://training.plone.org/5" target="_blank">Plone-Training</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://plone.org/products" target="_blank">Add ons for Plone</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <p class="for_anonymous"><a class="context pat-plone-modal" href="login_form" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}' i18n:translate="">Log in now!</a></p>
+
+                    <p class="for_autheticated"><a class="context" href="logout" i18n:translate="">Log out</a></p>
+
+                    <dl>
+                        <dt i18n:translate="">Manager</dt>
+                        <dd i18n:translate="description_manager">Manage content, users, addons and settings.</dd>
+                        <dt i18n:translate="">Editor-in-chief</dt>
+                        <dd i18n:translate="description_editor_in_chief">Create, edit and publish content.</dd>
+                        <dt i18n:translate="">Editor</dt>
+                        <dd i18n:translate="description_editor">Create, edit and submit content.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

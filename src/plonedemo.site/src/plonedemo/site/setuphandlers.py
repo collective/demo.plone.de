@@ -88,33 +88,17 @@ def remove_content(portal):
 def create_demo_users():
     # Do something during the installation of this package
     demo_users = [
-        # {'login': 'reader',
-        #  'password': 'reader',
-        #  'fullname': 'Reader',
-        #  'roles': ('Reader', ),
-        #  },
-        # {'login': 'contributor',
-        #  'password': 'contributor',
-        #  'fullname': 'Contributor',
-        #  'roles': ('Contributor', ),
-        #  },
         {'login': 'editor',
          'password': 'editor',
          'fullname': 'Editor',
          'roles': ('Reader', 'Contributor', 'Editor', 'Member'),
          },
-        {'login': 'reviewer',
-         'password': 'reviewer',
-         'fullname': 'Reviewer',
+        {'login': 'editorinchief',
+         'password': 'editorinchief',
+         'fullname': 'Editor-in-chief',
          'groups': ['Reviewers'],
-         'roles': ('Reader', 'Reviewer', 'Editor', 'Member'),
+         'roles': ('Reader', 'Contributor', 'Reviewer', 'Editor', 'Member'),
          },
-        # {'login': 'siteadmin',
-        #  'password': 'siteadmin',
-        #  'fullname': 'Site Admininstrator',
-        #  'groups': ['Site Administrators'],
-        #  'roles': ('Site Administrator', ),
-        #  },
         {'login': 'manager',
          'password': 'manager',
          'fullname': 'Manager',
@@ -141,7 +125,7 @@ def create_demo_users():
 
 def create_frontpage(portal, container, target_language):
     """Create a frontpage. The text is the translation or default of
-    the view '@@demo-frontpage'.
+    the view '@@demo_frontpage'.
     """
     if not container.get('frontpage'):
         frontpage = api.content.create(
@@ -156,17 +140,18 @@ def create_frontpage(portal, container, target_language):
     front_text = None
     # Get frontpage-text from the translation-machinery.
     # To edit it you have to modify
-    # plonedemo/site/locales/de/LC_MESSAGES/plonedemo.site.po
+    # plonedemo/site/locales/XX/LC_MESSAGES/plonedemo.site.po
     translated_text = util.translate(
         msgid='plonedemo_frontpage',
         target_language=target_language)
     if translated_text != u'plonedemo_frontpage':
         front_text = translated_text
-    if not front_text:
+    if front_text is None:
         # Get text from reading the template-file since I can't find a way to
         # get the english default text using util.translate()
+        # To modify edit plonedemo/site/browser/templates/frontpage.pt
         path = os.path.join(os.path.abspath(
-            os.path.dirname(__file__)), 'browser', 'frontpage.pt')
+            os.path.dirname(__file__)), 'browser', 'templates', 'frontpage.pt')
         frontpage_raw = open(path).read()
         front_text = bodyfinder(frontpage_raw).strip()
 
