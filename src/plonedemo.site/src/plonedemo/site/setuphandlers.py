@@ -82,7 +82,8 @@ def remove_content(portal):
         'events',
     ]
     for item in default_content:
-        api.content.delete(portal[item])
+        if item in portal:
+            api.content.delete(portal[item])
 
 
 def create_demo_users():

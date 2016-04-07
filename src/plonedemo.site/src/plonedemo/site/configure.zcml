@@ -29,7 +29,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="plonedemo.site"
+      title="plonedemo.site - uninstall"
       directory="profiles/uninstall"
       description="Uninstalls the plonedemo.site add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"

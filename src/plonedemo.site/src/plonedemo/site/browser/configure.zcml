@@ -12,9 +12,10 @@
       />
 
   <!-- Publish static files -->
-  <browser:resourceDirectory
-      name="plonedemo.site"
+  <plone:static
       directory="static"
+      type="plone"
+      name="plonedemo.site"
       />
 
   <browser:page
