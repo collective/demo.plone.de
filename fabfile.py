@@ -103,3 +103,4 @@ def update():
         
         # start zope
         start()
+        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)
