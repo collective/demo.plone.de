@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_EMAIL = 'demo@plone.de'
 FRONTPAGE_TITLE = _(u'Welcome to Plone 5')
 FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
+IMPORTED_FOLDER_ID = 'demo'
 
 
 class HiddenProfiles(object):
@@ -67,6 +68,32 @@ def post_install(setup):
             update=True,
             publish=True,
         )
+
+    default_language = api.portal.get_registry_record('plone.default_language')
+    default_lang_folder = portal.get(default_language)
+    demo_folder = default_lang_folder.get(IMPORTED_FOLDER_ID)
+    for language in languages:
+        if language == default_language:
+            continue
+        lang_folder = portal.get(language)
+        lang_demo_folder = lang_folder.get(IMPORTED_FOLDER_ID)
+        if not lang_demo_folder:
+            continue
+
+        # link demo-folders
+        link_translations(obj=demo_folder, translation=lang_demo_folder, language=language)  # noqa
+
+        translated = []
+        for obj1_id, obj1 in demo_folder.contentItems():
+            # try to find a possible translation
+            for obj2_id, obj2 in lang_demo_folder.contentItems():
+                if obj2_id in translated:
+                    continue
+                # link the first item with the same portal_type
+                if obj1.portal_type == obj2.portal_type:
+                    link_translations(obj=obj1, translation=obj2, language=language)
+                    translated.append(obj2_id)
+                    break
 
 
 def uninstall(setup):
@@ -193,3 +220,11 @@ def import_zexp(setup, filename, container, name, update=True, publish=True):
                 api.content.transition(item, to_state='published')
             except WorkflowException:
                 pass
+
+
+def link_translations(obj, translation, language):
+    if obj is translation or obj.language == language:
+        logger.info('Not linking {0} to {1} ({2})'.format(obj.absolute_url(), translation.absolute_url(), language))  # noqa
+        return
+    logger.info('Linking {0} to {1} ({2})'.format(obj.absolute_url(), translation.absolute_url(), language))  # noqa
+    ITranslationManager(obj).register_translation(language, translation)
