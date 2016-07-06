@@ -27,6 +27,8 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         return [
             u'plondemo.site:uninstall',
+            u'plone.app.openid:default',
+            u'archetypes.multilingual:default',
         ]
 
 
