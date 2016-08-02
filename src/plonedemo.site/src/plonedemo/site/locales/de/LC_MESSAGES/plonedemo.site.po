@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-28 11:00+0000\n"
+"POT-Creation-Date: 2016-08-02 06:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Redakteur"
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:40
 msgid "Editor-in-chief"
 msgstr "Chefredakteur"
+
+#: plonedemo/site/configure.zcml:21
+msgid "Installs the plonedemo.site add-on."
+msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:33
 msgid "Log in now!"
@@ -86,6 +90,10 @@ msgstr "Auf dieser Demo-Webseite können Sie Plone ${plone_version} testen. Die 
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Verbesserungsvorschläge und Probleme können Sie <a href=\"https://github.com/collective/demo.plone.de/issues\">auf Github melden</a>."
 
+#: plonedemo/site/configure.zcml:36
+msgid "Uninstalls the plonedemo.site add-on."
+msgstr ""
+
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:23
 msgid "Want to know more?"
 msgstr "Sie wollen mehr erfahren?"
@@ -112,8 +120,15 @@ msgstr "Inhalte erstellen, bearbeiten und veröffentlichen."
 msgid "description_manager"
 msgstr "Inhalte, Benutzer, Erweiterungen und Einstellungen verwalten."
 
+#: plonedemo/site/configure.zcml:21
+msgid "plonedemo.site"
+msgstr ""
+
+#: plonedemo/site/configure.zcml:36
+msgid "plonedemo.site - uninstall"
+msgstr ""
+
 #. Default: "<p>Edit this site and test Plone 5 now!</p>"
 #: plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
 msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone 5 jetzt!</p>"
-

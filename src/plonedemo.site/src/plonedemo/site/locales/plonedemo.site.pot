@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-28 11:00+0000\n"
+"POT-Creation-Date: 2016-08-02 06:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,10 @@ msgstr ""
 
 #: plonedemo.site/src/plonedemo/site/browser/templates/frontpage_viewlet.pt:40
 msgid "Editor-in-chief"
+msgstr ""
+
+#: plonedemo.site/src/plonedemo/site/configure.zcml:21
+msgid "Installs the plonedemo.site add-on."
 msgstr ""
 
 #: plonedemo.site/src/plonedemo/site/browser/templates/frontpage_viewlet.pt:33
@@ -89,6 +93,10 @@ msgstr ""
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr ""
 
+#: plonedemo.site/src/plonedemo/site/configure.zcml:36
+msgid "Uninstalls the plonedemo.site add-on."
+msgstr ""
+
 #: plonedemo.site/src/plonedemo/site/browser/templates/frontpage_viewlet.pt:23
 msgid "Want to know more?"
 msgstr ""
@@ -115,8 +123,15 @@ msgstr ""
 msgid "description_manager"
 msgstr ""
 
+#: plonedemo.site/src/plonedemo/site/configure.zcml:21
+msgid "plonedemo.site"
+msgstr ""
+
+#: plonedemo.site/src/plonedemo/site/configure.zcml:36
+msgid "plonedemo.site - uninstall"
+msgstr ""
+
 #. Default: "<p>Edit this site and test Plone 5 now!</p>"
 #: plonedemo.site/src/plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
 msgstr ""
-
