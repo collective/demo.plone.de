@@ -23,10 +23,10 @@
                     <h3 i18n:translate="">Want to know more?</h3>
                     <ul>
                         <li><a i18n:translate="" class="link-plain" href="http://plone.com/features/" target="_blank">The features of Plone</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="http://plone.org/documentation/" target="_blank">Plone-Documentation</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://docs.plone.org" target="_blank">Plone-Documentation</a></li>
                         <li><a i18n:translate="" class="link-plain" href="http://plone.com/success-stories" target="_blank">Success stories</a></li>
                         <li><a i18n:translate="" class="link-plain" href="http://training.plone.org/5" target="_blank">Plone-Training</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="http://plone.org/products" target="_blank">Add ons for Plone</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://plone.org/download/add-ons" target="_blank">Add ons for Plone</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
