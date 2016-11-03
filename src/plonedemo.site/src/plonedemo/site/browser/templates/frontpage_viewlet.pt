@@ -17,7 +17,7 @@
                     <h3 i18n:translate="">About this site</h3>
                     <p i18n:translate="">This is a demo-site where you can test Plone <span tal:replace="view/get_plone_version" i18n:name="plone_version"></span>.
                     The site will be reset every 4 hours.</p>
-                    <p i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
+                    <p i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6  col-md-4">
                     <h3 i18n:translate="">Want to know more?</h3>
@@ -25,7 +25,7 @@
                         <li><a i18n:translate="" class="link-plain" href="http://plone.com/features/" target="_blank">The features of Plone</a></li>
                         <li><a i18n:translate="" class="link-plain" href="http://docs.plone.org" target="_blank">Plone-Documentation</a></li>
                         <li><a i18n:translate="" class="link-plain" href="http://plone.com/success-stories" target="_blank">Success stories</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="http://training.plone.org/5" target="_blank">Plone-Training</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="http://training.plone.org" target="_blank">Plone-Training</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://plone.org/download/add-ons" target="_blank">Add ons for Plone</a></li>
                     </ul>
                 </div>

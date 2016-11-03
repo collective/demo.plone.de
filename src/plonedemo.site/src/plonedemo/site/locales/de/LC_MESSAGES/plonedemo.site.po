@@ -87,7 +87,7 @@ msgid "This is a demo-site where you can test Plone ${plone_version}. The site w
 msgstr "Auf dieser Demo-Webseite können Sie Plone ${plone_version} testen. Die Inhalte werden alle 4 Stunden zurückgesetzt."
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
-msgid "This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
+msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Verbesserungsvorschläge und Probleme können Sie <a href=\"https://github.com/collective/demo.plone.de/issues\">auf Github melden</a>."
 
 #: plonedemo/site/configure.zcml:36
