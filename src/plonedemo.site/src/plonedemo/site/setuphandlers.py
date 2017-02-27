@@ -236,5 +236,5 @@ def link_translations(obj, translation, language):
 def setup_wpd(portal):
     qi = api.portal.get_tool('portal_quickinstaller')
     qi.installProduct('wpd.countdown')
-    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=26))  # noqa
+    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=28))  # noqa
     api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_url', 'http://plone.de/world-plone-day/')  # noqa
