@@ -3,6 +3,7 @@ from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.interfaces import ILanguage
 from Products.CMFPlone.utils import bodyfinder
+from datetime import date
 from plone import api
 from plone.app.multilingual.browser.setup import SetupMultilingualSite
 from plone.app.multilingual.interfaces import ITranslationManager
@@ -11,6 +12,7 @@ from plonedemo.site import _
 from zope.component import queryUtility
 from zope.i18n.interfaces import ITranslationDomain
 from zope.interface import implements
+
 import logging
 import os
 
@@ -94,6 +96,7 @@ def post_install(setup):
                     link_translations(obj=obj1, translation=obj2, language=language)
                     translated.append(obj2_id)
                     break
+    setup_wpd(portal)
 
 
 def uninstall(setup):
@@ -228,3 +231,11 @@ def link_translations(obj, translation, language):
         return
     logger.info('Linking {0} to {1} ({2})'.format(obj.absolute_url(), translation.absolute_url(), language))  # noqa
     ITranslationManager(obj).register_translation(language, translation)
+
+
+def setup_wpd(portal):
+    import pdb; pdb.set_trace()
+    qi = api.portal.get_tool('portal_quickinstaller')
+    qi.installProduct('wpd.countdown')
+    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=26))  # noqa
+    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_url', 'http://plone.de/world-plone-day/')  # noqa
