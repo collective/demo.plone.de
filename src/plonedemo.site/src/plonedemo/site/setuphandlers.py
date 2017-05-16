@@ -3,7 +3,6 @@ from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.interfaces import ILanguage
 from Products.CMFPlone.utils import bodyfinder
-from datetime import date
 from plone import api
 from plone.app.multilingual.browser.setup import SetupMultilingualSite
 from plone.app.multilingual.interfaces import ITranslationManager
@@ -96,7 +95,7 @@ def post_install(setup):
                     link_translations(obj=obj1, translation=obj2, language=language)
                     translated.append(obj2_id)
                     break
-    setup_wpd(portal)
+    # setup_wpd(portal)
 
 
 def uninstall(setup):
@@ -233,8 +232,9 @@ def link_translations(obj, translation, language):
     ITranslationManager(obj).register_translation(language, translation)
 
 
-def setup_wpd(portal):
-    qi = api.portal.get_tool('portal_quickinstaller')
-    qi.installProduct('wpd.countdown')
-    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=28))  # noqa
-    api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_url', 'http://plone.de/world-plone-day/')  # noqa
+# def setup_wpd(portal):
+#     from datetime import date
+#     qi = api.portal.get_tool('portal_quickinstaller')
+#     qi.installProduct('wpd.countdown')
+#     api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=28))  # noqa
+#     api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_url', 'http://plone.de/world-plone-day/')  # noqa

@@ -3,12 +3,4 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="plone">
 
-  <assignment
-    manager="plone.rightcolumn"
-    category="context"
-    key="/"
-    type="wpd.countdown.WPDcountdown"
-    name="wpd.countdown.WPDcountdown"
-    />
-
 </portlets>
