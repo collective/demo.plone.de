@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-02 06:26+0000\n"
+"POT-Creation-Date: 2017-05-19 14:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Editor-in-chief"
 msgstr ""
 
-#: plonedemo/site/configure.zcml:21
+#: plonedemo/site/configure.zcml:22
 msgid "Installs the plonedemo.site add-on."
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "The features of Plone"
 msgstr ""
 
-#: plonedemo/site/setuphandlers.py:21
+#: plonedemo/site/setuphandlers.py:22
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr ""
 
@@ -87,10 +87,10 @@ msgid "This is a demo-site where you can test Plone ${plone_version}. The site w
 msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
-msgid "This site is provided by the Plone Community. If you have suggestions or encounter issues please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
+msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr ""
 
-#: plonedemo/site/configure.zcml:36
+#: plonedemo/site/configure.zcml:31
 msgid "Uninstalls the plonedemo.site add-on."
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Want to know more?"
 msgstr ""
 
-#: plonedemo/site/setuphandlers.py:20
+#: plonedemo/site/setuphandlers.py:21
 msgid "Welcome to Plone 5"
 msgstr ""
 
@@ -120,11 +120,11 @@ msgstr ""
 msgid "description_manager"
 msgstr ""
 
-#: plonedemo/site/configure.zcml:21
+#: plonedemo/site/configure.zcml:22
 msgid "plonedemo.site"
 msgstr ""
 
-#: plonedemo/site/configure.zcml:36
+#: plonedemo/site/configure.zcml:31
 msgid "plonedemo.site - uninstall"
 msgstr ""
 
