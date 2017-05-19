@@ -14,10 +14,10 @@ class PlonedemoSiteLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
-    def setUpZope(self, app, configurationContext):
+    def setUpZope(self, app, configurationContext):  # noqa: N803
         self.loadZCML(package=plonedemo.site)
 
-    def setUpPloneSite(self, portal):
+    def setUpPloneSite(self, portal):  # noqa: N803
         applyProfile(portal, 'plonedemo.site:default')
 
 
@@ -26,13 +26,13 @@ PLONEDEMO_SITE_FIXTURE = PlonedemoSiteLayer()
 
 PLONEDEMO_SITE_INTEGRATION_TESTING = IntegrationTesting(
     bases=(PLONEDEMO_SITE_FIXTURE,),
-    name='PlonedemoSiteLayer:IntegrationTesting'
+    name='PlonedemoSiteLayer:IntegrationTesting',
 )
 
 
 PLONEDEMO_SITE_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(PLONEDEMO_SITE_FIXTURE,),
-    name='PlonedemoSiteLayer:FunctionalTesting'
+    name='PlonedemoSiteLayer:FunctionalTesting',
 )
 
 
@@ -40,7 +40,7 @@ PLONEDEMO_SITE_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
         PLONEDEMO_SITE_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE
+        z2.ZSERVER_FIXTURE,
     ),
-    name='PlonedemoSiteLayer:AcceptanceTesting'
+    name='PlonedemoSiteLayer:AcceptanceTesting',
 )

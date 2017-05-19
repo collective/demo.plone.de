@@ -10,7 +10,7 @@ from plone.app.textfield.value import RichTextValue
 from plonedemo.site import _
 from zope.component import queryUtility
 from zope.i18n.interfaces import ITranslationDomain
-from zope.interface import implements
+from zope.interface import implementer
 
 import logging
 import os
@@ -23,8 +23,8 @@ FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
 IMPORTED_FOLDER_ID = 'demo'
 
 
+@implementer(INonInstallable)
 class HiddenProfiles(object):
-    implements(INonInstallable)
 
     def getNonInstallableProfiles(self):
         return [
@@ -36,14 +36,12 @@ class HiddenProfiles(object):
 
 def post_install(setup):
     """Post install script"""
-    if setup.readDataFile('plonedemosite_default.txt') is None:
-        return
     portal = api.portal.get()
     remove_content(portal)
     create_demo_users()
     languages = api.portal.get_registry_record('plone.available_languages')
-    setupTool = SetupMultilingualSite()
-    setupTool.setupSite(portal)
+    ml_setup_tool = SetupMultilingualSite()
+    ml_setup_tool.setupSite(portal)
     for language in languages:
         container = portal[language]
 
@@ -63,14 +61,14 @@ def post_install(setup):
         # Import zexp for language
         import_zexp(
             setup,
-            filename='demo_%s.zexp' % language,
+            filename='demo_{0}.zexp'.format(language),
             container=container,
             name='demo',
             update=True,
             publish=True,
         )
 
-    default_language = api.portal.get_registry_record('plone.default_language')
+    default_language = api.portal.get_default_language()
     default_lang_folder = portal.get(default_language)
     demo_folder = default_lang_folder.get(IMPORTED_FOLDER_ID)
     for language in languages:
@@ -82,7 +80,10 @@ def post_install(setup):
             continue
 
         # link demo-folders
-        link_translations(obj=demo_folder, translation=lang_demo_folder, language=language)  # noqa
+        link_translations(
+            obj=demo_folder,
+            translation=lang_demo_folder,
+            language=language)
 
         translated = []
         for obj1_id, obj1 in demo_folder.contentItems():
@@ -92,7 +93,10 @@ def post_install(setup):
                     continue
                 # link the first item with the same portal_type
                 if obj1.portal_type == obj2.portal_type:
-                    link_translations(obj=obj1, translation=obj2, language=language)
+                    link_translations(
+                        obj=obj1,
+                        translation=obj2,
+                        language=language)
                     translated.append(obj2_id)
                     break
     # setup_wpd(portal)
@@ -100,9 +104,6 @@ def post_install(setup):
 
 def uninstall(setup):
     """Uninstall script"""
-    if setup.readDataFile('plonedemosite_uninstall.txt') is None:
-        return
-    # Do something during the uninstallation of this package
 
 
 def remove_content(portal):
@@ -226,9 +227,15 @@ def import_zexp(setup, filename, container, name, update=True, publish=True):
 
 def link_translations(obj, translation, language):
     if obj is translation or obj.language == language:
-        logger.info('Not linking {0} to {1} ({2})'.format(obj.absolute_url(), translation.absolute_url(), language))  # noqa
+        logger.info('Not linking {0} to {1} ({2})'.format(
+            obj.absolute_url(),
+            translation.absolute_url(),
+            language))
         return
-    logger.info('Linking {0} to {1} ({2})'.format(obj.absolute_url(), translation.absolute_url(), language))  # noqa
+    logger.info('Linking {0} to {1} ({2})'.format(
+        obj.absolute_url(),
+        translation.absolute_url(),
+        language))
     ITranslationManager(obj).register_translation(language, translation)
 
 
