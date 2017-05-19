@@ -18,14 +18,8 @@
       directory="profiles/default"
       description="Installs the plonedemo.site add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
       />
-
-  <genericsetup:importStep
-      name="plonedemo.site-postInstall"
-      title="plonedemo.site post_install import step"
-      description="Post install import step from plonedemo.site"
-      handler=".setuphandlers.post_install">
-  </genericsetup:importStep>
 
   <genericsetup:registerProfile
       name="uninstall"
@@ -33,14 +27,8 @@
       directory="profiles/uninstall"
       description="Uninstalls the plonedemo.site add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
       />
-
-  <genericsetup:importStep
-      name="plonedemo.site-uninstall"
-      title="plonedemo.site uninstall import step"
-      description="Import step run during ininstalling plonedemo.site"
-      handler=".setuphandlers.uninstall">
-  </genericsetup:importStep>
 
   <utility
       factory=".setuphandlers.HiddenProfiles"
