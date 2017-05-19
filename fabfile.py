@@ -3,19 +3,20 @@
 Fabric script to manage demo
 """
 
-from fabric.api import env, cd, sudo, run
+from fabric.api import env, cd, sudo
 from fabric.decorators import task
 
 # Fabric uses the ~/.ssh/config
 # Needed here because of wrong dns
 env.use_ssh_config = True
 
+
 @task
 def demo_host(branch='master'):
     """
     Host serving our Plone demo
     """
-    env.hosts = ['demo.plone.e']
+    env.hosts = ['demo.plone.de']
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
@@ -56,16 +57,16 @@ def setup():
     with cd(env.homedir):
 
         # clone repository from github
-        sudo('git clone https://github.com/collective/demo.plone.de.git', user=env.deploy_user)
+        sudo('git clone https://github.com/collective/demo.plone.de.git', user=env.deploy_user)  # noqa: E501
 
     with cd(env.directory):
 
         # requirements
-        # sudo('python python-dev build-essential zlib1g-dev libssl-dev libxml2-dev libxslt1-dev wv poppler-utils libtiff5-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev')
+        # sudo('python python-dev build-essential zlib1g-dev libssl-dev libxml2-dev libxslt1-dev wv poppler-utils libtiff5-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev')   # noqa: E501
 
         # prepare buildout
         sudo('ln -s local_production.cfg local.cfg', user=env.deploy_user)
-        sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)
+        sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)  # noqa: E501
 
         # bootstrap and run bildout once
         sudo('python bootstrap.py', user=env.deploy_user)
@@ -104,9 +105,9 @@ def update():
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
-            sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)
+            sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
             # start zope
             start()
 
-        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)
+        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
