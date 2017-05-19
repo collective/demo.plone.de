@@ -6,7 +6,7 @@ Fabric script to manage demo
 from fabric.api import env, cd, sudo, run
 from fabric.decorators import task
 
-# Fabric uses the ~/.ssh/config 
+# Fabric uses the ~/.ssh/config
 # Needed here because of wrong dns
 env.use_ssh_config = True
 
@@ -58,7 +58,6 @@ def setup():
         # clone repository from github
         sudo('git clone https://github.com/collective/demo.plone.de.git', user=env.deploy_user)
 
-
     with cd(env.directory):
 
         # requirements
@@ -67,7 +66,7 @@ def setup():
         # prepare buildout
         sudo('ln -s local_production.cfg local.cfg', user=env.deploy_user)
         sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)
-        
+
         # bootstrap and run bildout once
         sudo('python bootstrap.py', user=env.deploy_user)
         sudo('./bin/buildout', user=env.deploy_user)
@@ -82,25 +81,28 @@ def update():
     Update the instance and reinstall the demo
     """
     with cd(env.directory):
-        
+
         # stop running plone
         stop()
-        
+
         # update plone
         sudo('git pull', user=env.deploy_user)
         sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
-        
+
         # bootstrap
         sudo('python bootstrap.py', user=env.deploy_user)
-        
+
         # delete database and sone files
-        sudo('rm -rf .installed.cfg', user=env.deploy_user)
+        # sudo('rm -rf .installed.cfg', user=env.deploy_user)
         sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
-        sudo('rm -rf ./var/filestorage', user=env.deploy_user)        
+        sudo('rm -rf ./var/filestorage', user=env.deploy_user)
 
         # buildout
-        sudo('./bin/buildout', user=env.deploy_user)
-        
+        sudo('./bin/buildout install plonesite', user=env.deploy_user)
+
+        # re-add the lost admin-user
+        sudo('./bin/zeoclient_admin adduser admin admin', user=env.deploy_user)
+
         # start zope
         start()
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)
