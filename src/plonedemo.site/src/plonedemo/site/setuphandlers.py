@@ -196,9 +196,10 @@ def import_zexp(setup, filename, container, name, update=True, publish=True):
     """Import a zexp
     """
     # Check if the zexp-file is actually in profiles/default
+    context = setup._getImportContext('profile-plonedemo.site:default')
     path = os.path.join(os.path.abspath(
         os.path.dirname(__file__)), 'profiles', 'default', filename)
-    if filename not in setup.listDirectory(path=None):
+    if filename not in context.listDirectory(path=None):
         logger.info('zexp-file {0} does not exist'.format(path))
         return
     if name in container.keys():
