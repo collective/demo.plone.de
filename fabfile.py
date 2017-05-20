@@ -102,10 +102,10 @@ def update():
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
+            sudo('rm .installed.cfg', user=env.deploy_user)
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
-            sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
             # start zope
             start()
