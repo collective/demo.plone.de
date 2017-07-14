@@ -299,8 +299,10 @@
                 $('input#__ac_password').click();
                 $('input#__ac_password').val(password);
                 if ( $('.pattern-modal-buttons input[type="submit"]').length ) {
+                  // this is a modal
                   $('.pattern-modal-buttons input[type="submit"]').click();
                 } else {
+                  // this is no modal
                   $('.formControls input[type="submit"]').click();
                 }
             });
