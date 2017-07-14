@@ -114,4 +114,6 @@ def update():
             start()
             sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
+        # load page twice to fill cache and prevent a bug showing raw html
+        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
