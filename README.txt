@@ -31,6 +31,11 @@ Changes compared to stock-plone
 
 Among other things the `setuphandler <https://github.com/collective/demo.plone.de/blob/master/src/plonedemo.site/src/plonedemo/site/setuphandlers.py>`_ of ``plonesite.demo`` loads two zexp-files into the site and links the content as translations.
 
-plone.app.multilingual is installed by default and demo-content is created in german and english. Pull-request for additional languages would be welcome but would have to contain another zexp for the demo-content.
-
 The login-form is overrriden with z3c.jbot to enable autologin with different roles.
+
+Languages
+=========
+
+`plone.app.multilingual` is installed by default and demo-content is created in german, english, spanish and basque. Pull-request for additional languages are welcome but have to contain new zexp for the demo-content. See https://github.com/collective/demo.plone.de/pull/17 for an example.
+
+We can add additional country-specific domains to the nginx-config.
