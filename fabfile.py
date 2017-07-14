@@ -39,6 +39,7 @@ def start():
     with cd(env.directory):
         sudo('./bin/supervisorctl start all', user=env.deploy_user)
 
+
 @task
 def restart():
     """
@@ -91,7 +92,9 @@ def update():
             # Plonesite Recipe replaces site on the fly
             print 'UPDATE: No full Buildout required: {0:s}'.format(result)
             # buildout
+            stop()
             sudo('./bin/buildout install plonesite', user=env.deploy_user)
+            start()
 
         else:
             stop()
