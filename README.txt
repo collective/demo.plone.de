@@ -25,4 +25,12 @@ When this repository has no changes fabric only runs ``./bin/buildout install pl
 
 The ``plonesite`` part of the buildout uses `collective.recipe.plonesite <https://pypi.python.org/pypi/collective.recipe.plonesite>`_ to create a fresh site each time and installs the profile ``plonedemo.site:default`` which creates some demo-content.
 
+
+Changes compared to stock-plone
+===============================
+
 Among other things the `setuphandler <https://github.com/collective/demo.plone.de/blob/master/src/plonedemo.site/src/plonedemo/site/setuphandlers.py>`_ of ``plonesite.demo`` loads two zexp-files into the site and links the content as translations.
+
+plone.app.multilingual is installed by default and demo-content is created in german and english. Pull-request for additional languages would be welcome but would have to contain another zexp for the demo-content.
+
+The login-form is overrriden with z3c.jbot to enable autologin with different roles.
