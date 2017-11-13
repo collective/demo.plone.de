@@ -3,5 +3,6 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-plone.app.multilingual:default</dependency>
+    <dependency>profile-plone.login:default</dependency>
   </dependencies>
 </metadata>

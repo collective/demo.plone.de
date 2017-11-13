@@ -34,4 +34,6 @@
       layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
       />
 
+  <adapter factory=".login.loginform_templatefactory" />
+
 </configure>
