@@ -70,7 +70,7 @@ def setup():
         sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)  # noqa: E501
 
         # bootstrap and run bildout once
-        sudo('./bin/python bootstrap.py', user=env.deploy_user)
+        sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
         sudo('./bin/buildout', user=env.deploy_user)
 
         # start supervisor which starts plone instance also
@@ -101,7 +101,7 @@ def update():
             sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
 
             # bootstrap
-            sudo('./bin/python bootstrap.py', user=env.deploy_user)
+            sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
