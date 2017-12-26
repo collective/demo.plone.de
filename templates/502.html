@@ -1,0 +1,50 @@
+<head>
+<meta http-equiv="refresh" content="40" />
+</head>
+<body>
+<style>
+
+body {
+    text-align: center;
+    padding-top: 100px;
+    background-color: #007bb1;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 { font-size: 350%; }
+h2 { font-size: 200%; }
+
+a {color: white;}
+
+
+</style>
+
+
+<h1>Resetting demo.plone.de ...</h1>
+
+<h2>Reloading in <span id="CDTimer"></span> Seconds</h2>
+
+<h3>This site is currently being reset!</h3>
+
+<h3>This happens automatically every 4 hours and should not take more than 30 seconds.</h3>
+
+
+<p>&nbsp;</p>
+<em>If this message persists please <a href="https://github.com/collective/demo.plone.de/issues">create a ticket</em>.
+
+<script language="JavaScript" type="text/javascript">
+/*<![CDATA[*/
+var TimerVal = 10;
+var TimerSPan = document.getElementById("CDTimer");
+function CountDown(){
+   setTimeout( "CountDown()", 1000 );
+   TimerSPan.innerHTML=TimerVal;
+   TimerVal=TimerVal-1;
+   if (TimerVal<0) { TimerVal=0;
+      location.reload(true);
+   }
+}
+CountDown();
+/*]]>*/ </script>
+</body>
