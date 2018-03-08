@@ -18,7 +18,7 @@ import os
 logger = logging.getLogger(__name__)
 
 DEFAULT_EMAIL = 'demo@plone.de'
-FRONTPAGE_TITLE = _(u'Welcome to Plone 5')
+FRONTPAGE_TITLE = _(u'Welcome to Plone 5.1')
 FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
 IMPORTED_FOLDER_ID = 'demo'
 

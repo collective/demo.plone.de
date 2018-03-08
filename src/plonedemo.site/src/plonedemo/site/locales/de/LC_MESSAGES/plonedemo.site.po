@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-05-19 14:03+0000\n"
+"POT-Creation-Date: 2018-03-08 08:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:17
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:19
 msgid "About this site"
 msgstr "Über diese Seite"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:29
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:31
 msgid "Add ons for Plone"
 msgstr "Erweiterungen für Plone"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:42
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:44
 msgid "Editor"
 msgstr "Redakteur"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:40
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:42
 msgid "Editor-in-chief"
 msgstr "Chefredakteur"
 
@@ -34,11 +34,11 @@ msgstr "Chefredakteur"
 msgid "Installs the plonedemo.site add-on."
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:33
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:35
 msgid "Log in now!"
 msgstr "Jetzt einloggen!"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:35
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:37
 msgid "Log out"
 msgstr "Ausloggen"
 
@@ -54,27 +54,27 @@ msgstr "Als Chefredakteur einloggen"
 msgid "Login as Manager"
 msgstr "Als Administrator einloggen"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:38
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:40
 msgid "Manager"
 msgstr "Administrator"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:13
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:15
 msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
 msgstr "Plone &mdash; Das ultimative Open Source Enterprise CMS"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:26
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:28
 msgid "Plone-Documentation"
 msgstr "Plone-Dokumentation"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:28
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:30
 msgid "Plone-Training"
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:29
 msgid "Success stories"
 msgstr "Erfolgreiche Projekte mit Plone"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:25
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
 msgid "The features of Plone"
 msgstr "Die Funktionen von Plone"
 
@@ -82,11 +82,11 @@ msgstr "Die Funktionen von Plone"
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr "Das ultimative Open Source Enterprise CMS"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:18
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
 msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every 4 hours."
 msgstr "Auf dieser Demo-Webseite können Sie Plone ${plone_version} testen. Die Inhalte werden alle 4 Stunden zurückgesetzt."
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:22
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Verbesserungsvorschläge und Probleme können Sie <a href=\"https://github.com/collective/demo.plone.de/issues\">auf Github melden</a>."
 
@@ -94,29 +94,29 @@ msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Ver
 msgid "Uninstalls the plonedemo.site add-on."
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:23
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:25
 msgid "Want to know more?"
 msgstr "Sie wollen mehr erfahren?"
 
 #: plonedemo/site/setuphandlers.py:21
-msgid "Welcome to Plone 5"
-msgstr "Willkommen bei Plone 5"
+msgid "Welcome to Plone 5.1"
+msgstr "Willkommen bei Plone 5.1"
 
 #. Default: "Create, edit and submit content."
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:45
 msgid "description_editor"
 msgstr "Inhalte erstellen, bearbeiten und einreichen."
 
 #. Default: "Create, edit and publish content."
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
 msgid "description_editor_in_chief"
 msgstr "Inhalte erstellen, bearbeiten und veröffentlichen."
 
 #. Default: "Manage content, users, addons and settings."
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:39
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
 msgid "description_manager"
 msgstr "Inhalte, Benutzer, Erweiterungen und Einstellungen verwalten."
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "plonedemo.site - uninstall"
 msgstr ""
 
-#. Default: "<p>Edit this site and test Plone 5 now!</p>"
+#. Default: "<p>Edit this site and test Plone 5.1 now!</p>"
 #: plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
-msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone 5 jetzt!</p>"
+msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone 5.1 jetzt!</p>"
