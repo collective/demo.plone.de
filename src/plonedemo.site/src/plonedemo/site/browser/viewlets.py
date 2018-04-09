@@ -2,6 +2,7 @@
 from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
 from plone.app.layout.navigation.interfaces import INavigationRoot
+from pkg_resources import get_distribution
 
 
 class FrontpageViewlet(ViewletBase):
@@ -14,4 +15,4 @@ class FrontpageViewlet(ViewletBase):
             return context_state.is_view_template()
 
     def get_plone_version(self):
-        return api.env.plone_version()
+        return get_distribution('Plone').version
