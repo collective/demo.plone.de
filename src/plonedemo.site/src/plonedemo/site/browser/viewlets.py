@@ -2,7 +2,8 @@
 from plone import api
 from plone.app.layout.viewlets.common import ViewletBase
 from plone.app.layout.navigation.interfaces import INavigationRoot
-from pkg_resources import get_distribution
+
+import pkg_resources
 
 
 class FrontpageViewlet(ViewletBase):
@@ -15,4 +16,7 @@ class FrontpageViewlet(ViewletBase):
             return context_state.is_view_template()
 
     def get_plone_version(self):
-        return get_distribution('Plone').version
+        try:
+            return pkg_resources.get_distribution('Plone').version
+        except pkg_resources.DistributionNotFound:
+            return pkg_resources.get_distribution('Products.CMFPlone').version
