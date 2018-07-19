@@ -14,6 +14,7 @@ from zope.interface import implementer
 
 import logging
 import os
+import six
 
 logger = logging.getLogger(__name__)
 
@@ -59,14 +60,15 @@ def post_install(setup):
                     language, frontpage)
 
         # Import zexp for language
-        import_zexp(
-            setup,
-            filename='demo_{0}.zexp'.format(language),
-            container=container,
-            name='demo',
-            update=True,
-            publish=True,
-        )
+        if six.PY2:
+            import_zexp(
+                setup,
+                filename='demo_{0}.zexp'.format(language),
+                container=container,
+                name='demo',
+                update=True,
+                publish=True,
+            )
 
     default_language = api.portal.get_default_language()
     default_lang_folder = portal.get(default_language)
