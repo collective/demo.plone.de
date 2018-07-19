@@ -36,15 +36,11 @@ IP & Ports
 
 **demo-latest.plone.de (Plone: 5.2, Python: 2.7)**
 
-- zeoclient1: 127.0.0.1:8072
-- zeoclient2: 127.0.0.1:8073
-- zeoserver:  127.0.0.1:8070
+- instance: 127.0.0.1:8072
 
 **demo-latest-py3.plone.de (Plone: 5.2, Python 3.6)**
 
-- zeoclient1: 127.0.0.1:8062
-- zeoclient2: 127.0.0.1:8063
-- zeoserver:  127.0.0.1:8060
+- instance: 127.0.0.1:8062
 
 Changes compared to stock-plone
 ===============================
