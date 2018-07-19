@@ -25,6 +25,23 @@ When this repository has no changes fabric only runs ``./bin/buildout install pl
 
 The ``plonesite`` part of the buildout uses `collective.recipe.plonesite <https://pypi.python.org/pypi/collective.recipe.plonesite>`_ to create a fresh site each time and installs the profile ``plonedemo.site:default`` which creates some demo-content.
 
+IP & Ports
+==========
+
+**demo.plone.de (Plone: lastest stable, Python: 2.7)**
+zeoclient1: 127.0.0.1:8082
+zeoclient2: 127.0.0.1:8083
+zeoserver:  127.0.0.1:8090
+
+**demo-latest.plone.de (Plone: 5.2, Python: 2.7)**
+zeoclient1: 127.0.0.1:8072
+zeoclient2: 127.0.0.1:8073
+zeoserver:  127.0.0.1:8070
+
+**demo-latest-py3.plone.de (Plone: 5.2, Python 3.6)**
+zeoclient1: 127.0.0.1:8062
+zeoclient2: 127.0.0.1:8063
+zeoserver:  127.0.0.1:8060
 
 Changes compared to stock-plone
 ===============================
