@@ -69,11 +69,22 @@ def post_install(setup):
                 update=True,
                 publish=True,
             )
+        else:
+            import_zexp(
+                setup,
+                filename='py3demo_{0}.zexp'.format(language),
+                container=container,
+                name='demo',
+                update=True,
+                publish=True,
+            )
 
     default_language = api.portal.get_default_language()
     default_lang_folder = portal.get(default_language)
     demo_folder = default_lang_folder.get(IMPORTED_FOLDER_ID)
     for language in languages:
+        if not demo_folder:
+            break
         if language == default_language:
             continue
         lang_folder = portal.get(language)
