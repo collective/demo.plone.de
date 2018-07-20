@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-20 12:07+0000\n"
+"POT-Creation-Date: 2018-07-20 13:26+0000\n"
 "PO-Revision-Date: 2017-06-21 16:59+0200\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
@@ -44,14 +44,17 @@ msgstr "¡Entra ahora!"
 msgid "Log out"
 msgstr "Salir"
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:40
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:283
 msgid "Login as Editor"
 msgstr "Entrar como Editor"
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:35
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:278
 msgid "Login as Editor-in-chief"
 msgstr "Entrar como Editor-en-jefe"
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:30
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:273
 msgid "Login as Manager"
 msgstr "Entrar como Administrador"
@@ -76,8 +79,8 @@ msgstr "Cursos Plone"
 msgid "Success stories"
 msgstr "Casos de éxito"
 
-#: plonedemo/site/browser/templates/versions_viewlet.pt:11
-msgid "Technical Details"
+#: plonedemo/site/browser/templates/versions_viewlet.pt:12
+msgid "Technical Details:"
 msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
@@ -90,7 +93,7 @@ msgstr "El Sistema de Gestión de Contenido de Fuentes Abiertas"
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:21
 msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every ${reset_hours} hours."
-msgstr ""
+msgstr "Esta es una página de demostración donde puedes probar Plone ${plone_version}. La página se restaurará cada ${reset_hours} horas."
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:22
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
@@ -113,18 +116,21 @@ msgid "Welcome to Plone"
 msgstr "Bienvenido a Plone"
 
 #. Default: "Create, edit and submit content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:45
 msgid "description_editor"
 msgstr "Crear, modificar y enviar contenido para su publicación"
 
 #. Default: "Create, edit and publish content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
 msgid "description_editor_in_chief"
 msgstr "Crear, modificar y publicar contenido"
 
 #. Default: "Manage content, users, addons and settings."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
 msgid "description_manager"

@@ -24,6 +24,14 @@ class FrontpageViewlet(ViewletBase):
         except pkg_resources.DistributionNotFound:
             return pkg_resources.get_distribution('Products.CMFPlone').version
 
+    def reset_hours(self):
+        version = pkg_resources.parse_version(
+            pkg_resources.get_distribution('Products.CMFPlone').version)
+        is_52 = version >= pkg_resources.parse_version('5.1.999')
+        if is_52:
+            return u'24'
+        return u'4'
+
 
 class VersionsViewlet(ViewletBase):
 

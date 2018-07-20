@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-20 12:07+0000\n"
+"POT-Creation-Date: 2018-07-20 13:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,14 +42,17 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:40
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:283
 msgid "Login as Editor"
 msgstr ""
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:35
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:278
 msgid "Login as Editor-in-chief"
 msgstr ""
 
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:30
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:273
 msgid "Login as Manager"
 msgstr ""
@@ -74,8 +77,8 @@ msgstr ""
 msgid "Success stories"
 msgstr ""
 
-#: plonedemo/site/browser/templates/versions_viewlet.pt:11
-msgid "Technical Details"
+#: plonedemo/site/browser/templates/versions_viewlet.pt:12
+msgid "Technical Details:"
 msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
@@ -111,18 +114,21 @@ msgid "Welcome to Plone"
 msgstr ""
 
 #. Default: "Create, edit and submit content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:45
 msgid "description_editor"
 msgstr ""
 
 #. Default: "Create, edit and publish content."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
 msgid "description_editor_in_chief"
 msgstr ""
 
 #. Default: "Manage content, users, addons and settings."
+#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
 msgid "description_manager"
