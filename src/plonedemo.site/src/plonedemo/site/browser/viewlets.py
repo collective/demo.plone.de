@@ -36,4 +36,5 @@ class VersionsViewlet(ViewletBase):
     def portal_created(self):
         portal = api.portal.get()
         folder = portal['en']
-        return api.portal.get_localized_time(folder.created(), long_format=True)
+        return api.portal.get_localized_time(
+            folder.created(), long_format=True)

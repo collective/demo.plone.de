@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-03-08 08:11+0000\n"
+"POT-Creation-Date: 2018-07-20 12:07+0000\n"
 "PO-Revision-Date: 2017-06-21 16:59+0200\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
@@ -76,21 +76,29 @@ msgstr "Cursos Plone"
 msgid "Success stories"
 msgstr "Casos de éxito"
 
+#: plonedemo/site/browser/templates/versions_viewlet.pt:11
+msgid "Technical Details"
+msgstr ""
+
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
 msgid "The features of Plone"
 msgstr "Características de Plone"
 
-#: plonedemo/site/setuphandlers.py:22
+#: plonedemo/site/setuphandlers.py:23
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr "El Sistema de Gestión de Contenido de Fuentes Abiertas"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:20
-msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every 4 hours."
-msgstr "Esta es una página de demostración donde puedes probar Plone ${plone_version}. La página se restaurará cada 4 horas."
+#: plonedemo/site/browser/templates/frontpage_viewlet.pt:21
+msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every ${reset_hours} hours."
+msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:22
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Esta es una página preparada por la Comunidad Plone. Si tienes sugerencias o problemas <a href=\"https://github.com/collective/demo.plone.de/issues\">envíanoslas</a> a través de github."
+
+#: plonedemo/site/browser/templates/versions_viewlet.pt:18
+msgid "This site was last reset on:"
+msgstr ""
 
 #: plonedemo/site/configure.zcml:31
 msgid "Uninstalls the plonedemo.site add-on."
@@ -100,7 +108,7 @@ msgstr "<a href=\"https://github.com/collective/demo.plone.de/issues\">submit a 
 msgid "Want to know more?"
 msgstr "¿Quieres saber más?"
 
-#: plonedemo/site/setuphandlers.py:21
+#: plonedemo/site/setuphandlers.py:22
 msgid "Welcome to Plone"
 msgstr "Bienvenido a Plone"
 
