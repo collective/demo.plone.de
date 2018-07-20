@@ -24,6 +24,11 @@ class FrontpageViewlet(ViewletBase):
         except pkg_resources.DistributionNotFound:
             return pkg_resources.get_distribution('Products.CMFPlone').version
 
+    def version_overview(self):
+        portal = api.portal.get()
+        view = api.content.get_view('overview-controlpanel', portal, self.request)
+        return view.version_overview()
+
 
 class VersionsViewlet(ViewletBase):
 

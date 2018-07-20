@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <object>
-  <order manager="plone.abovecontent" skinname="Plone Default">
+  <order manager="plone.abovecontenttitle" skinname="Plone Default">
     <viewlet name="frontpage_viewlet" />
-    <viewlet name="plone.path_bar" />
+    <viewlet name="plone.abovecontenttitle.socialtags" />
   </order>
   <order manager="plone.portalfooter" skinname="Plone Default">
-    <viewlet name="versions_viewlet" />
   </order>
 </object>

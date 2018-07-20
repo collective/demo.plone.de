@@ -27,14 +27,14 @@
 
   <browser:viewlet
       name="frontpage_viewlet"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
       class=".viewlets.FrontpageViewlet"
       template="templates/frontpage_viewlet.pt"
       permission="zope2.View"
       layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
       />
 
-  <browser:viewlet
+<!--   <browser:viewlet
       name="versions_viewlet"
       manager="plone.app.layout.viewlets.interfaces.IBelowContent"
       class=".viewlets.VersionsViewlet"
@@ -42,5 +42,5 @@
       permission="zope2.View"
       layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
       />
-
+ -->
 </configure>
