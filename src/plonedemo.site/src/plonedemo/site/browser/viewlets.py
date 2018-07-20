@@ -27,6 +27,12 @@ class FrontpageViewlet(ViewletBase):
 
 class VersionsViewlet(ViewletBase):
 
+    def show(self):
+        context_state = api.content.get_view(
+            'plone_context_state', self.context, self.request)
+        if INavigationRoot.providedBy(context_state.canonical_object()):
+            return context_state.is_view_template()
+
     def version_overview(self):
         portal = api.portal.get()
         view = api.content.get_view(

@@ -19,3 +19,7 @@ body.userrole-anonymous .for_authenticated {
 .principal.plonedemo h3 {
     margin-top: 0;
 }
+
+.technical_versions ul {
+    padding-left: 0;
+}

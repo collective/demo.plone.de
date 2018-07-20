@@ -4,20 +4,19 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       tal:omit-tag=""
-      i18n:domain="plonedemo.site">
+      i18n:domain="plonedemo.site"
+      tal:condition="view/show">
 
-<div>
+<div class="technical_versions">
 
-    <h3 i18n:translate="">Technical Details</h3>
+    <h4 i18n:translate="">Technical Details:</h4>
     <ul>
       <tal:list-versions repeat="version python:view.version_overview()">
         <li tal:content="version">Version</li>
       </tal:list-versions>
     </ul>
-    <p>
-      <span i18n:translate="">This site was last reset on:</span>
-      <span tal:replace="python: view.portal_created()">XXXX</span>
-    </p>
+    <span i18n:translate="">This site was last reset on:</span>
+    <span tal:replace="python: view.portal_created()">XXXX</span>
 
 </div>
 </html>
