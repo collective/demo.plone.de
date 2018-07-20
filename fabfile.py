@@ -37,7 +37,7 @@ def demo_host_latest(branch='master', latest=True, python3=False):
     env.latest = latest
     env.python3 = python3
     env.homedir = '/home/%s/' % env.deploy_user
-    env.directory = '/home/%s/demo.plone.de_latest/' % env.deploy_user
+    env.directory = '/home/%s/demo-latest.plone.de/' % env.deploy_user
 
 @task
 def demo_host_latest_py3(branch='master', latest=True, python3=True):
@@ -51,7 +51,7 @@ def demo_host_latest_py3(branch='master', latest=True, python3=True):
     env.latest = latest
     env.python3 = python3
     env.homedir = '/home/%s/' % env.deploy_user
-    env.directory = '/home/%s/demo.plone.de_latest_py3/' % env.deploy_user
+    env.directory = '/home/%s/demo-latest-py3.plone.de/' % env.deploy_user
 
 def stop():
     """
