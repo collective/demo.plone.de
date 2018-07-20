@@ -57,12 +57,12 @@ def stop():
     """
     Shutdown the Zope Instance
     """
-    with cd(env.directory):
-        if env.latest and not env.python3:
-            sudo('systemctl stop demo-latest.service', user=env.deploy_user)
-        elif env.latest and env.python3:
-            sudo('systemctl stop demo-latest-py3.service', user=env.deploy_user)
-        else:
+    if env.latest and not env.python3:
+        sudo('systemctl stop demo-latest.service', user=env.deploy_user, shell=False)
+    elif env.latest and env.python3:
+        sudo('systemctl stop demo-latest-py3.service', user=env.deploy_user, shell=False)
+    else:
+        with cd(env.directory):
             sudo('./bin/supervisorctl stop all', user=env.deploy_user)
 
 
@@ -70,12 +70,12 @@ def start():
     """
     Start up the Zope Instance
     """
-    with cd(env.directory):
-        if env.latest and not env.python3:
-            sudo('systemctl start demo-latest.service', user=env.deploy_user)
-        elif env.latest and env.python3:
-            sudo('systemctl start demo-latest-py3.service', user=env.deploy_user)
-        else:
+    if env.latest and not env.python3:
+        sudo('systemctl start demo-latest.service', user=env.deploy_user, shell=False)
+    elif env.latest and env.python3:
+        sudo('systemctl start demo-latest-py3.service', user=env.deploy_user, shell=False)
+    else:
+        with cd(env.directory):
             sudo('./bin/supervisorctl start all', user=env.deploy_user)
 
 
