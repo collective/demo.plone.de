@@ -126,22 +126,24 @@ def update():
     """
     Update the instance and reinstall the demo
     """
-    with cd(env.directory):
 
-        # update plone
+    # update plone
+    with cd(env.directory):
         result = sudo('git pull', user=env.deploy_user)
         quick_update = 'Already up-to-date.' in result
 
-        if quick_update:
-            # Plonesite Recipe replaces site on the fly
-            print 'UPDATE: No full Buildout required: {0:s}'.format(result)
-            # buildout
-            stop()
+    if quick_update:
+        # Plonesite Recipe replaces site on the fly
+        print 'UPDATE: No full Buildout required: {0:s}'.format(result)
+        # buildout
+        stop()
+        with cd(env.directory):
             sudo('./bin/buildout install plonesite', user=env.deploy_user)
-            start()
+        start()
 
-        else:
-            stop()
+    else:
+        stop()
+        with cd(env.directory):
             sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
 
             # bootstrap
@@ -154,9 +156,10 @@ def update():
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
 
-            # start zope
-            start()
-            # We Single ZEO on the nightly installations
+        # start zope
+        start()
+        # We Single ZEO on the nightly installations
+        with cd(env.directory):
             if env.latest:
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
             else:
