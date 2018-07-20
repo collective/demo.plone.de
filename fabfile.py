@@ -58,9 +58,9 @@ def stop():
     Shutdown the Zope Instance
     """
     if env.latest and not env.python3:
-        sudo('systemctl stop demo-latest.service', user=env.deploy_user, shell=False)
+        sudo('/bin/systemctl stop demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('systemctl stop demo-latest-py3.service', user=env.deploy_user, shell=False)
+        sudo('/bin/systemctl stop demo-latest-py3.service', shell=False)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl stop all', user=env.deploy_user)
@@ -71,9 +71,9 @@ def start():
     Start up the Zope Instance
     """
     if env.latest and not env.python3:
-        sudo('systemctl start demo-latest.service', user=env.deploy_user, shell=False)
+        sudo('/bin/systemctl start demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('systemctl start demo-latest-py3.service', user=env.deploy_user, shell=False)
+        sudo('/bin/systemctl start demo-latest-py3.service', shell=False)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl start all', user=env.deploy_user)
@@ -86,9 +86,9 @@ def restart():
     """
     with cd(env.directory):
         if env.latest and not env.python3:
-            sudo('systemctl restart demo-latest.service', user=env.deploy_user)
+            sudo('/bin/systemctl restart demo-latest.service', shell=False)
         elif env.latest and env.python3:
-            sudo('systemctl restart demo-latest-py3.service', user=env.deploy_user)
+            sudo('/bin/systemctl restart demo-latest-py3.service', shell=False)
         else:
             sudo('./bin/supervisorctl restart all', user=env.deploy_user)
 
@@ -155,7 +155,6 @@ def update():
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
-
         # start zope
         start()
         # We Single ZEO on the nightly installations
