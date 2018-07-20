@@ -34,4 +34,13 @@
       layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
       />
 
+  <browser:viewlet
+      name="versions_viewlet"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".viewlets.VersionsViewlet"
+      template="templates/versions_viewlet.pt"
+      permission="zope2.View"
+      layer="plonedemo.site.interfaces.IPlonedemoSiteLayer"
+      />
+
 </configure>
