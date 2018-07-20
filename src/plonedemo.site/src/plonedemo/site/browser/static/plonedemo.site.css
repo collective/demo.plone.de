@@ -1,18 +1,10 @@
-#login_form .formControls input[type="submit"],
-input#__ac_name,
-input#__ac_password,
-label[for="__ac_name"],
-label[for="__ac_password"] {
-    display: none;
-}
-
-body.userrole-authenticated .for_autheticated,
+body.userrole-authenticated .for_authenticated,
 body.userrole-anonymous .for_anonymous {
     display: block;
 }
 
 body.userrole-authenticated .for_anonymous,
-body.userrole-anonymous .for_autheticated {
+body.userrole-anonymous .for_authenticated {
     display: none;
 }
 
