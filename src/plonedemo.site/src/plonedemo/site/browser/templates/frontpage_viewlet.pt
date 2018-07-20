@@ -18,7 +18,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <h3 i18n:translate="">About this site</h3>
                     <p i18n:translate="">This is a demo-site where you can test Plone <span tal:replace="view/get_plone_version" i18n:name="plone_version"></span>.
-                    The site will be reset every 4 hours.</p>
+                    The site will be reset every <span i18n:name="reset_hours">4</span> hours.</p>
                     <p i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6  col-md-4">

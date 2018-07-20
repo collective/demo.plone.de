@@ -99,8 +99,8 @@ msgid "Want to know more?"
 msgstr "Sie wollen mehr erfahren?"
 
 #: plonedemo/site/setuphandlers.py:21
-msgid "Welcome to Plone 5.1"
-msgstr "Willkommen bei Plone 5.1"
+msgid "Welcome to Plone"
+msgstr "Willkommen bei Plone"
 
 #. Default: "Create, edit and submit content."
 #: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
@@ -128,7 +128,7 @@ msgstr ""
 msgid "plonedemo.site - uninstall"
 msgstr ""
 
-#. Default: "<p>Edit this site and test Plone 5.1 now!</p>"
+#. Default: "<p>Edit this site and test Plonenow!</p>"
 #: plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
-msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone 5.1 jetzt!</p>"
+msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone jetzt!</p>"

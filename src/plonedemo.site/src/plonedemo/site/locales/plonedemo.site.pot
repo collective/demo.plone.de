@@ -102,7 +102,7 @@ msgid "Want to know more?"
 msgstr ""
 
 #: plonedemo.site/src/plonedemo/site/setuphandlers.py:21
-msgid "Welcome to Plone 5.1"
+msgid "Welcome to Plone"
 msgstr ""
 
 #. Default: "Create, edit and submit content."
@@ -131,7 +131,7 @@ msgstr ""
 msgid "plonedemo.site - uninstall"
 msgstr ""
 
-#. Default: "<p>Edit this site and test Plone 5.1 now!</p>"
+#. Default: "<p>Edit this site and test Plone now!</p>"
 #: plonedemo.site/src/plonedemo/site/browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
 msgstr ""
