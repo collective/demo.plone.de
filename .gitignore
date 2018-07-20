@@ -33,12 +33,13 @@ pip-selfcheck.json
 local.cfg
 secret.cfg
 
-# Codeintel
+# Python
 .codeintel
 etc/
 include/
 lib/
 local/
+pyvenv.cfg
 
 # Editor configs
 .settings
