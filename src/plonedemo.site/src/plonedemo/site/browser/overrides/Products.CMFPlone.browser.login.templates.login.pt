@@ -25,6 +25,46 @@
         <form action="." method="post"
               tal:attributes="action view/action; enctype view/enctype">
 
+        <div i18n:domain="plonedemo.site">
+          <p>
+            <a class="context autologin" data-autologin-user="manager" data-autologin-password="manager" href="#" i18n:translate="">Login as Manager</a>
+            <br />
+            <span i18n:translate="description_manager">Manage content, users, addons and settings.</span>
+          </p>
+          <p>
+            <a class="context autologin" data-autologin-user="editorinchief" data-autologin-password="editorinchief" href="#" i18n:translate="">Login as Editor-in-chief</a>
+            <br />
+            <span i18n:translate="description_editor_in_chief">Create, edit and publish content.</span>
+          </p>
+          <p>
+            <a class="context autologin" data-autologin-user="editor" data-autologin-password="editor" href="#" i18n:translate="">Login as Editor</a>
+            <br />
+            <span i18n:translate="description_editor">Create, edit and submit content.</span>
+          </p>
+        </div>
+
+        <!--
+        This is only inserted here because I'm to lazy to figure about how to get this js to run in a modal created by mockup
+         -->
+        <script type="text/javascript">
+            $('a.autologin').on("click", function(e) {
+                e.preventDefault();
+                var username = $(this).attr('data-autologin-user');
+                var password = $(this).attr('data-autologin-password');
+                $('input#__ac_name').click();
+                $('input#__ac_name').val(username);
+                $('input#__ac_password').click();
+                $('input#__ac_password').val(password);
+                if ( $('.pattern-modal-buttons input[type="submit"]').length ) {
+                  // this is a modal
+                  $('.pattern-modal-buttons input[type="submit"]').click();
+                } else {
+                  // this is no modal
+                  $('.formControls input[type="submit"]').click();
+                }
+            });
+        </script>
+
             <tal:widgets repeat="widget view/widgets/values">
 
                 <tal:block tal:define="hidden python:widget.mode == 'hidden'">
