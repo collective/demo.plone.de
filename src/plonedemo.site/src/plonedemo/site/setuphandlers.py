@@ -40,6 +40,10 @@ def post_install(setup):
     portal = api.portal.get()
     remove_content(portal)
     create_demo_users()
+    if six.PY3:
+        # in py3 we do not have all languages yet
+        api.portal.set_registry_record(
+            'plone.available_languages', ['en', 'de'])
     languages = api.portal.get_registry_record('plone.available_languages')
     ml_setup_tool = SetupMultilingualSite()
     ml_setup_tool.setupSite(portal)
