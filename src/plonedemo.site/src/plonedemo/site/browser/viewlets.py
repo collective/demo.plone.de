@@ -32,3 +32,8 @@ class VersionsViewlet(ViewletBase):
         view = api.content.get_view(
             'overview-controlpanel', portal, self.request)
         return view.version_overview()
+
+    def portal_created(self):
+        portal = api.portal.get()
+        folder = portal['en']
+        return api.portal.get_localized_time(folder.created(), long_format=True)

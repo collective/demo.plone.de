@@ -14,6 +14,10 @@
         <li tal:content="version">Version</li>
       </tal:list-versions>
     </ul>
+    <p>
+      <span i18n:translate="">This site was last reset on:</span>
+      <span tal:replace="python: view.portal_created()">XXXX</span>
+    </p>
 
 </div>
 </html>
