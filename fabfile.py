@@ -134,14 +134,18 @@ def update():
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
-            sudo('rm .installed.cfg', user=env.deploy_user)
+            sudo('rm -f .installed.cfg', user=env.deploy_user)
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
 
             # start zope
             start()
-            sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
+            # We Single ZEO on the nightly installations
+            if env.latest:
+                sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
+            else:
+                sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
         # load page twice to fill cache and prevent a bug showing raw html
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
