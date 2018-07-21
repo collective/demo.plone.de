@@ -46,3 +46,6 @@ pyvenv.cfg
 .project
 .pydevproject
 .idea/
+
+# checkouts
+src-mrd/
