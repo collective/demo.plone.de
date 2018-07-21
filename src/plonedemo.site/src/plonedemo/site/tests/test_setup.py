@@ -3,7 +3,7 @@
 from plonedemo.site.testing import PLONEDEMO_SITE_INTEGRATION_TESTING  # noqa
 from plone import api
 
-import unittest2 as unittest
+import unittest
 
 
 class TestSetup(unittest.TestCase):
