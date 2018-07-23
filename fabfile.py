@@ -154,6 +154,7 @@ def update():
 
             if env.latest and env.python3:
                 sudo('./bin/pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
+                sudo('rm -rf ./src-mrd', user=env.deploy_user)
             else:
                 sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
 
