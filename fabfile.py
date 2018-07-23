@@ -172,9 +172,9 @@ def update():
         start()
         # We Single ZEO on the nightly installations
         with cd(env.directory):
-            if env.latest:
+            if env.latest and not env.python3:
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
-            else:
+            elif not env.latest and not env.python3:
                 sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
         if env.latest and env.python3:
