@@ -179,7 +179,8 @@ def update():
 
         if env.latest and env.python3:
             with cd(env.directory):
-                sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://0.0.0.0:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
+                sudo("sleep 15")
+                sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
 
         # load page twice to fill cache and prevent a bug showing raw html
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
