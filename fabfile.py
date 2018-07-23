@@ -132,6 +132,10 @@ def update():
         result = sudo('git pull', user=env.deploy_user)
         quick_update = 'Already up-to-date.' in result
 
+    # Override quickupdate if we updating the latest sites
+    if env.latest:
+        quick_update = False
+
     if quick_update:
         # Plonesite Recipe replaces site on the fly
         print 'UPDATE: No full Buildout required: {0:s}'.format(result)
@@ -147,14 +151,22 @@ def update():
             sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
 
             # bootstrap
-            sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
+
+            if env.latest and env.python3:
+                sudo('./bin/pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
+            else:
+                sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
             sudo('rm -f .installed.cfg', user=env.deploy_user)
 
             # buildout
-            sudo('./bin/buildout', user=env.deploy_user)
+            if env.latest and env.python3:
+                sudo('./bin/buildout -c local_demo_latest_py3.cfg', user=env.deploy_user)
+            else:
+                sudo('./bin/buildout', user=env.deploy_user)
+
         # start zope
         start()
         # We Single ZEO on the nightly installations
@@ -163,6 +175,10 @@ def update():
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
             else:
                 sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
+
+        if env.latest and env.python3:
+            with cd(env.directory):
+                sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://0.0.0.0:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
 
         # load page twice to fill cache and prevent a bug showing raw html
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
