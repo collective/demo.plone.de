@@ -20,6 +20,10 @@ body.userrole-anonymous .for_authenticated {
     margin-top: 0;
 }
 
+.technical_versions {
+    text-align: center;
+}
+
 .technical_versions ul {
     padding-left: 0;
 }

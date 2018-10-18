@@ -7,7 +7,7 @@
       i18n:domain="plonedemo.site"
       tal:condition="view/show">
 
-<div class="technical_versions">
+<div class="technical_versions container">
 
     <h4 i18n:translate="">Technical Details:</h4>
     <ul>
