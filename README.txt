@@ -28,7 +28,7 @@ The ``plonesite`` part of the buildout uses `collective.recipe.plonesite <https:
 systemd start/stop
 ==================
 
-For the py3 instance we use systemd to start/stop the process, here is the config file `/etc/systemd/system/demo-latest-py3.service`. Useful commands are `systemctl restart demo-latest-py3.service` `& systemctl status demo-latest-py3.service`
+For the py3 instance we use systemd to start/stop the process, here is the config file ``/etc/systemd/system/demo-latest-py3.service``. Useful commands are ``systemctl restart demo-latest-py3.service`` & ``systemctl status demo-latest-py3.service``
 
 IP & Ports
 ==========
