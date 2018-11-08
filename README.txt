@@ -25,6 +25,11 @@ When this repository has no changes fabric only runs ``./bin/buildout install pl
 
 The ``plonesite`` part of the buildout uses `collective.recipe.plonesite <https://pypi.python.org/pypi/collective.recipe.plonesite>`_ to create a fresh site each time and installs the profile ``plonedemo.site:default`` which creates some demo-content.
 
+systemd start/stop
+==================
+
+For the py3 instance we use systemd to start/stop the process, here is the config file `/etc/systemd/system/demo-latest-py3.service`. Useful commands are `systemctl restart demo-latest-py3.service` `& systemctl status demo-latest-py3.service`
+
 IP & Ports
 ==========
 
