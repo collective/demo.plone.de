@@ -60,7 +60,7 @@ def stop():
     if env.latest and not env.python3:
         sudo('/bin/systemctl stop demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('/bin/systemctl stop demo-latest-py3.service', shell=False)
+        sudo('/bin/instance stop', user=env.deploy_user)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl stop all', user=env.deploy_user)
@@ -73,7 +73,7 @@ def start():
     if env.latest and not env.python3:
         sudo('/bin/systemctl start demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('/bin/systemctl start demo-latest-py3.service', shell=False)
+        sudo('/bin/instance start', user=env.deploy_user)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl start all', user=env.deploy_user)
@@ -152,7 +152,7 @@ def update():
 
             # bootstrap
 
-            if env.latest and env.python3:
+            if env.latest:
                 sudo('./bin/pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
                 sudo('rm -rf ./src-mrd', user=env.deploy_user)
             else:
@@ -172,10 +172,8 @@ def update():
         start()
         # We Single ZEO on the nightly installations
         with cd(env.directory):
-            if env.latest and not env.python3:
+            if env.latest:
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
-            elif not env.latest and not env.python3:
-                sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
         if env.latest and env.python3:
             with cd(env.directory):
