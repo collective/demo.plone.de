@@ -173,6 +173,7 @@ def update():
         # We Single ZEO on the nightly installations
         with cd(env.directory):
             if env.latest:
+                sudo("sleep 15")
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
 
         if env.latest and env.python3:
