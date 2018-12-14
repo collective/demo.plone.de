@@ -169,13 +169,12 @@ def update():
                 sudo('./bin/buildout', user=env.deploy_user)
 
         # start zope
-        start()
         # We Single ZEO on the nightly installations
         with cd(env.directory):
             if env.latest:
-                sudo("sleep 25")
                 sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
 
+        start()
         if env.latest and env.python3:
             with cd(env.directory):
                 sudo("sleep 15")
