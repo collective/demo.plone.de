@@ -73,7 +73,7 @@ def start():
     if env.latest and not env.python3:
         sudo('/bin/systemctl start demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('/bin/systemctl stop demo-latest-py3', shell=False)
+        sudo('/bin/systemctl start demo-latest-py3', shell=False)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl start all', user=env.deploy_user)
