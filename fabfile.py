@@ -60,7 +60,7 @@ def stop():
     if env.latest and not env.python3:
         sudo('/bin/systemctl stop demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('/bin/instance stop', user=env.deploy_user)
+        sudo('./bin/instance stop', user=env.deploy_user)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl stop all', user=env.deploy_user)
