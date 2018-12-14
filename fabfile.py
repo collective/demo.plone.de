@@ -153,10 +153,10 @@ def update():
             # bootstrap
 
             if env.latest:
-                sudo('./bin/pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
+                sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
                 sudo('rm -rf ./src-mrd', user=env.deploy_user)
             else:
-                sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
+                sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
