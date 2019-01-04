@@ -25,6 +25,7 @@ def demo_host(branch='master', latest=False, python3=False):
     env.homedir = '/home/%s/' % env.deploy_user
     env.directory = '/home/%s/demo.plone.de/' % env.deploy_user
 
+
 @task
 def demo_host_latest(branch='master', latest=True, python3=False):
     """
@@ -38,6 +39,7 @@ def demo_host_latest(branch='master', latest=True, python3=False):
     env.python3 = python3
     env.homedir = '/home/%s/' % env.deploy_user
     env.directory = '/home/%s/demo-latest.plone.de/' % env.deploy_user
+
 
 @task
 def demo_host_latest_py3(branch='master', latest=True, python3=True):
@@ -53,30 +55,21 @@ def demo_host_latest_py3(branch='master', latest=True, python3=True):
     env.homedir = '/home/%s/' % env.deploy_user
     env.directory = '/home/%s/demo-latest-py3.plone.de/' % env.deploy_user
 
+
 def stop():
     """
     Shutdown the Zope Instance
     """
-    if env.latest and not env.python3:
-        sudo('/bin/systemctl stop demo-latest.service', shell=False)
-    elif env.latest and env.python3:
-        sudo('/bin/systemctl stop demo-latest-py3', shell=False)
-    else:
-        with cd(env.directory):
-            sudo('./bin/supervisorctl stop all', user=env.deploy_user)
+    with cd(env.directory):
+        sudo('./bin/supervisorctl stop all', user=env.deploy_user)
 
 
 def start():
     """
     Start up the Zope Instance
     """
-    if env.latest and not env.python3:
-        sudo('/bin/systemctl start demo-latest.service', shell=False)
-    elif env.latest and env.python3:
-        sudo('/bin/systemctl start demo-latest-py3', shell=False)
-    else:
-        with cd(env.directory):
-            sudo('./bin/supervisorctl start all', user=env.deploy_user)
+    with cd(env.directory):
+        sudo('./bin/supervisorctl start all', user=env.deploy_user)
 
 
 @task
@@ -85,12 +78,7 @@ def restart():
     Restart the Zope Instance
     """
     with cd(env.directory):
-        if env.latest and not env.python3:
-            sudo('/bin/systemctl restart demo-latest.service', shell=False)
-        elif env.latest and env.python3:
-            sudo('/bin/systemctl restart demo-latest-py3.service', shell=False)
-        else:
-            sudo('./bin/supervisorctl restart all', user=env.deploy_user)
+        sudo('./bin/supervisorctl restart all', user=env.deploy_user)
 
 
 @task
@@ -110,11 +98,20 @@ def setup():
         # sudo('python python-dev build-essential zlib1g-dev libssl-dev libxml2-dev libxslt1-dev wv poppler-utils libtiff5-dev libjpeg62-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev')   # noqa: E501
 
         # prepare buildout
-        sudo('ln -s local_production.cfg local.cfg', user=env.deploy_user)
+        if env.latest:
+            if env.python3:
+                sudo('ln -s local_demo_nightly_py3.cfg local.cfg', user=env.deploy_user)  # noqa: E501
+            else:
+                sudo('ln -s local_demo_nightly_py2.cfg local.cfg', user=env.deploy_user)  # noqa: E501
+        else:
+            sudo('ln -s local_production.cfg local.cfg', user=env.deploy_user)
         sudo('echo -e "[buildout]\nlogin = admin\npassword = admin" > secret.cfg', user=env.deploy_user)  # noqa: E501
 
         # bootstrap and run bildout once
-        sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
+        if env.latest:
+            sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
+        else:
+            sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)
         sudo('./bin/buildout', user=env.deploy_user)
 
         # start supervisor which starts plone instance also
@@ -153,32 +150,31 @@ def update():
             # bootstrap
 
             if env.latest:
-                sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)
+                sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
                 sudo('rm -rf ./src-mrd', user=env.deploy_user)
             else:
-                sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)
+                sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
 
             sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
             sudo('rm -rf ./var/filestorage', user=env.deploy_user)
             sudo('rm -f .installed.cfg', user=env.deploy_user)
 
             # buildout
-            if env.latest and env.python3:
-                sudo('./bin/buildout -c local_demo_latest_py3.cfg', user=env.deploy_user)
-            else:
-                sudo('./bin/buildout', user=env.deploy_user)
+            sudo('./bin/buildout', user=env.deploy_user)
 
         # start zope
-        # We Single ZEO on the nightly installations
-        with cd(env.directory):
-            if env.latest:
-                sudo('./bin/instance adduser admin admin', user=env.deploy_user)  # noqa: E501
-
         start()
-        if env.latest and env.python3:
-            with cd(env.directory):
-                sudo("sleep 15")
-                sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
+
+        # create plonesite with addons (uses different ports for py2 and py3)
+        if env.latest:
+            if env.python3:
+                with cd(env.directory):
+                    sudo("sleep 15")
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
+            else:
+                with cd(env.directory):
+                    sudo("sleep 15")
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:8072/@@plone-addsite &> /dev/null", user=env.deploy_user)  # noqa: E501
 
         # load page twice to fill cache and prevent a bug showing raw html
         sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
