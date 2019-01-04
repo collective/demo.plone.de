@@ -109,9 +109,9 @@ def setup():
 
         # bootstrap and run bildout once
         if env.latest:
-            sudo('./bin/pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
+            sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
         else:
-            sudo('./bin/pip install -r requirements.txt', user=env.deploy_user)
+            sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)
         sudo('./bin/buildout', user=env.deploy_user)
 
         # start supervisor which starts plone instance also
@@ -170,7 +170,7 @@ def update():
             if env.python3:
                 with cd(env.directory):
                     sudo("sleep 15")
-                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:8073/@@plone-addsite &> /dev/null", user=env.deploy_user)  # noqa: E501
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
             else:
                 with cd(env.directory):
                     sudo("sleep 15")
