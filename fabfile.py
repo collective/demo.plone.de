@@ -155,9 +155,7 @@ def update():
             else:
                 sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
 
-            sudo('rm -rf ./var/blobstorage', user=env.deploy_user)
-            sudo('rm -rf ./var/filestorage', user=env.deploy_user)
-            sudo('rm -f .installed.cfg', user=env.deploy_user)
+            sudo('rm -rf ./var/blobstorage ./var/filestorage .installed.cfg ', user=env.deploy_user)
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
