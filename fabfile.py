@@ -60,16 +60,28 @@ def stop():
     """
     Shutdown the Zope Instance
     """
-    with cd(env.directory):
-        sudo('./bin/supervisorctl stop all', user=env.deploy_user)
+    if env.latest and not env.python3:
+        sudo('/bin/systemctl stop demo-latest.service', shell=False)
+    elif env.latest and env.python3:
+        sudo('/bin/systemctl stop demo-latest-py3', shell=False)
+    else:
+        # demo site is multi instance, cant do supervisor for now
+        with cd(env.directory):
+            sudo('./bin/supervisorctl stop all', user=env.deploy_user)
 
 
 def start():
     """
     Start up the Zope Instance
     """
-    with cd(env.directory):
-        sudo('./bin/supervisorctl start all', user=env.deploy_user)
+    if env.latest and not env.python3:
+        sudo('/bin/systemctl start demo-latest.service', shell=False)
+    elif env.latest and env.python3:
+        sudo('/bin/systemctl start demo-latest-py3', shell=False)
+    else:
+        # demo site is multi instance, cant do supervisor for now
+        with cd(env.directory):
+            sudo('./bin/supervisorctl start all', user=env.deploy_user)
 
 
 @task
