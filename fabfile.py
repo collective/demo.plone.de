@@ -17,6 +17,8 @@ def demo_host(branch='master', latest=False, python3=False):
     Host serving our Plone demo
     """
     env.hosts = ['demo.plone.de']
+    env.domain = 'http://demo.plone.org'
+    env.zeoclient_port = '8082'
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
@@ -32,6 +34,8 @@ def demo_host_latest(branch='master', latest=True, python3=False):
     Host serving our Plone demo
     """
     env.hosts = ['demo.plone.de']
+    env.domain = 'http://demo-latest-py2.plone.org'
+    env.zeoclient_port = '8072'
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
@@ -47,6 +51,8 @@ def demo_host_latest_py3(branch='master', latest=True, python3=True):
     Host serving our Plone demo
     """
     env.hosts = ['demo.plone.de']
+    env.domain = 'http://demo-latest-py3.plone.org'
+    env.zeoclient_port = '6543'
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
@@ -167,7 +173,7 @@ def update():
             else:
                 sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
 
-            sudo('rm -rf ./var/blobstorage ./var/filestorage .installed.cfg ', user=env.deploy_user)
+            sudo('rm -rf ./var/blobstorage ./var/filestorage .installed.cfg ', user=env.deploy_user)  # noqa: E501
 
             # buildout
             sudo('./bin/buildout', user=env.deploy_user)
@@ -180,12 +186,11 @@ def update():
             if env.python3:
                 with cd(env.directory):
                     sudo("sleep 15")
-                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:6543/@@plone-addsite &> /dev/null", user=env.deploy_user)
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> /dev/null".format({'zeoclient_port': env.zeoclient_port}), user=env.deploy_user)  # noqa: E501
             else:
                 with cd(env.directory):
                     sudo("sleep 15")
-                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:8072/@@plone-addsite &> /dev/null", user=env.deploy_user)  # noqa: E501
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> /dev/null".format({'zeoclient_port': env.zeoclient_port}), user=env.deploy_user)  # noqa: E501
 
-        # load page twice to fill cache and prevent a bug showing raw html
-        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
-        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
+        # load page to warmup
+        sudo('/usr/bin/wget -S -qO- {domain} > /tmp/{domain}.html'.format({'domain': env.domain}), user=env.deploy_user)  # noqa: E501
