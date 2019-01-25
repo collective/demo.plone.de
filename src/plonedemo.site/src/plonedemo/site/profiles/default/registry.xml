@@ -34,7 +34,7 @@
 
   <record interface="Products.CMFPlone.interfaces.controlpanel.ILinkSchema"
           name="plone.mark_special_links">
-    <value>True</value>
+    <value>False</value>
   </record>
 
   <record interface="plone.app.multilingual.interfaces.IMultiLanguageExtraOptionsSchema"
