@@ -186,11 +186,11 @@ def update():
             if env.python3:
                 with cd(env.directory):
                     sudo("sleep 30")
-                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> /var/log/wget_demo-plone-latest-py3.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> ./var/log/wget_demo-plone-latest-py3.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
             else:
                 with cd(env.directory):
                     sudo("sleep 30")
-                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> /var/log/wget_demo-plone-latest-py2.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
+                    sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> ./var/log/wget_demo-plone-latest-py2.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
 
         # load page to warmup
         sudo('/usr/bin/wget -S -qO- {domain} > /dev/null'.format(domain=env.domain), user=env.deploy_user)  # noqa: E501
