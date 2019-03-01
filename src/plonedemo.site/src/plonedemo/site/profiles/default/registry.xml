@@ -29,7 +29,7 @@
 
   <record interface="Products.CMFPlone.interfaces.controlpanel.ISiteSchema"
           name="plone.site_title" >
-    <value>demo.plone.de</value>
+    <value>demo.plone.org</value>
   </record>
 
   <record interface="Products.CMFPlone.interfaces.controlpanel.ILinkSchema"

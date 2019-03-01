@@ -44,8 +44,6 @@ def post_install(setup):
         # in py3 we do not have all languages yet
         api.portal.set_registry_record(
             'plone.available_languages', ['en', 'de'])
-    if api.env.plone_version() >= '5.2':
-        api.portal.set_registry_record('plone.navigation_depth', 3)
     languages = api.portal.get_registry_record('plone.available_languages')
     ml_setup_tool = SetupMultilingualSite()
     ml_setup_tool.setupSite(portal)
