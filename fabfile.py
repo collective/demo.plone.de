@@ -52,7 +52,7 @@ def demo_host_latest_py3(branch='master', latest=True, python3=True):
     """
     env.hosts = ['demo.plone.de']
     env.domain = 'http://demo-latest-py3.plone.org'
-    env.zeoclient_port = '6543'
+    env.zeoclient_port = '8073'
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
