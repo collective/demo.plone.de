@@ -4,7 +4,7 @@ from plone.app.layout.viewlets.common import ViewletBase
 from plone.app.layout.navigation.interfaces import INavigationRoot
 
 import pkg_resources
-import six
+import sys
 
 
 class FrontpageViewlet(ViewletBase):
@@ -16,13 +16,19 @@ class FrontpageViewlet(ViewletBase):
         if INavigationRoot.providedBy(context_state.canonical_object()):
             return context_state.is_view_template()
 
+    def get_python_version(self):
+        return '{}.{}'.format(sys.version_info[0], sys.version_info[1])
+
     def get_plone_version(self):
-        if six.PY3:
-            return '5.2 with Python 3.6'
         try:
-            return pkg_resources.get_distribution('Plone').version
+            version = pkg_resources.get_distribution('Plone').version
         except pkg_resources.DistributionNotFound:
-            return pkg_resources.get_distribution('Products.CMFPlone').version
+            version = pkg_resources.get_distribution('Products.CMFPlone').version
+        # Drop the trailing .0 in Products.CMFPlone versions
+        # to get 5.2 instead of 5.2.0. Keep 5.0 and 6.0 intact.
+        if len(version) > 3 and version.endswith('.0'):
+            version = version[:-2]
+        return version
 
     def reset_hours(self):
         version = pkg_resources.parse_version(

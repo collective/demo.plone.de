@@ -23,17 +23,22 @@ On budapest (KVM guest) /home/zope/ runs the plone sites
 
 When this repository has no changes fabric only runs ``./bin/buildout install plonesite`` to speed up things. Otherwise it runs the complete buildout.
 
-The ``plonesite`` part of the buildout uses `collective.recipe.plonesite <https://pypi.python.org/pypi/collective.recipe.plonesite>`_ to create a fresh site each time and installs the profile ``plonedemo.site:default`` which creates some demo-content.
+The sites are created with a `wget` that installs the profile ``plonedemo.site:default`` which creates some demo-content:
+
+.. code-block:: shell
+
+    /usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:8080/@@plone-addsite
+
 
 systemd start/stop
 ==================
 
-For the py3 instance we use systemd to start/stop the process, here is the config file ``/etc/systemd/system/demo-latest-py3.service``. Useful commands are ``systemctl restart demo-latest-py3.service`` & ``systemctl status demo-latest-py3.service``
+For the python 3 instance we use systemd to start/stop the process, here is the config file ``/etc/systemd/system/demo-latest-py3.service``. Useful commands are ``systemctl restart demo-latest-py3.service`` & ``systemctl status demo-latest-py3.service``
 
 IP & Ports
 ==========
 
-**demo.plone.de (Plone: lastest stable, Python: 2.7)**
+**demo.plone.de (Plone: lastest stable, Python: 3.7)**
 
 - zeoclient1: 127.0.0.1:8082
 - zeoclient2: 127.0.0.1:8083
@@ -52,7 +57,7 @@ Changes compared to stock-plone
 
 Among other things the `setuphandler <https://github.com/collective/demo.plone.de/blob/master/src/plonedemo.site/src/plonedemo/site/setuphandlers.py>`_ of ``plonesite.demo`` loads two zexp-files into the site and links the content as translations.
 
-The login-form is overrriden with z3c.jbot to enable autologin with different roles.
+The login-form is overrriden with z3c.jbot to enable autologin with different roles. The users for that are created by the setuphandler.
 
 Languages
 =========
