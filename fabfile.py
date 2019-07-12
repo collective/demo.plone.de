@@ -169,7 +169,7 @@ def update():
 
         # start zope
         start()
-        sudo("sleep 50")
+        sudo("sleep 10")
 
         # create plonesite with addons (uses different ports for py2 and py3)
         if env.latest:
