@@ -144,39 +144,24 @@ def update():
 
     # update plone
     with cd(env.directory):
-        result = sudo('git pull', user=env.deploy_user)
-        quick_update = 'Already up-to-date.' in result
+        sudo('git pull', user=env.deploy_user)
 
-    # Override quickupdate if we updating the latest sites
-    if env.latest:
-        quick_update = False
+    with cd(env.directory):
+        stop()
+        sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
 
-    if quick_update:
-        # Plonesite Recipe replaces site on the fly
-        print 'UPDATE: No full Buildout required: {0:s}'.format(result)
+        # bootstrap
+
+        if env.latest:
+            sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
+            sudo('rm -rf ./src-mrd', user=env.deploy_user)
+        else:
+            sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
+
+        sudo('rm -rf ./var/blobstorage ./var/filestorage .installed.cfg ', user=env.deploy_user)  # noqa: E501
+
         # buildout
-        stop()
-        with cd(env.directory):
-            sudo('./bin/buildout install plonesite', user=env.deploy_user)
-        start()
-
-    else:
-        stop()
-        with cd(env.directory):
-            sudo('git checkout {}'.format(env.branch), user=env.deploy_user)
-
-            # bootstrap
-
-            if env.latest:
-                sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
-                sudo('rm -rf ./src-mrd', user=env.deploy_user)
-            else:
-                sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
-
-            sudo('rm -rf ./var/blobstorage ./var/filestorage .installed.cfg ', user=env.deploy_user)  # noqa: E501
-
-            # buildout
-            sudo('./bin/buildout', user=env.deploy_user)
+        sudo('./bin/buildout', user=env.deploy_user)
 
         # start zope
         start()
