@@ -91,7 +91,7 @@ def start():
             sudo("sleep 2")
             sudo('./bin/supervisorctl start zeoclient1', user=env.deploy_user)
             sudo("sleep 2")
-            sudo('./bin/supervisorctl start zeclient2', user=env.deploy_user)
+            sudo('./bin/supervisorctl start zeoclient2', user=env.deploy_user)
 
 
 @task
