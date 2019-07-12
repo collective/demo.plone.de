@@ -12,7 +12,7 @@ env.use_ssh_config = True
 
 
 @task
-def demo_host(branch='master', latest=False, python3=False):
+def demo_host(branch='master', latest=False, python3=True):
     """
     Host serving our Plone demo
     """
@@ -80,12 +80,12 @@ def start():
     """
     Start up the Zope Instance
     """
-    if env.latest and not env.python3:
-        sudo('/bin/systemctl start demo-latest.service', shell=False)
-    elif env.latest and env.python3:
-        sudo('/bin/systemctl start demo-latest-py3', shell=False)
+    if env.latest:
+        if env.python3:
+            sudo('/bin/systemctl start demo-latest.service', shell=False)
+        else:
+            sudo('/bin/systemctl start demo-latest-py3', shell=False)
     else:
-        # demo site is multi instance, cant do supervisor for now
         with cd(env.directory):
             sudo('./bin/supervisorctl start all', user=env.deploy_user)
 
@@ -191,6 +191,10 @@ def update():
                 with cd(env.directory):
                     sudo("sleep 30")
                     sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> ./var/log/wget_demo-plone-latest-py2.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
+        else:
+            with cd(env.directory):
+                sudo("sleep 30")
+                sudo("/usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:{zeoclient_port}/@@plone-addsite &> ./var/log/wget_demo-plone.log".format(zeoclient_port=env.zeoclient_port), user=env.deploy_user)  # noqa: E501
 
         # load page to warmup
         sudo('/usr/bin/wget -S -qO- {domain} > /dev/null'.format(domain=env.domain), user=env.deploy_user)  # noqa: E501
