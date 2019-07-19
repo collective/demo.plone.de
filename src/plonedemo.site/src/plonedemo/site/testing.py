@@ -12,7 +12,7 @@ import plonedemo.site
 
 class PlonedemoSiteLayer(PloneSandboxLayer):
 
-    defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
+    defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)  # noqa: N815
 
     def setUpZope(self, app, configurationContext):  # noqa: N803
         self.loadZCML(package=plonedemo.site)
