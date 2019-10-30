@@ -33,7 +33,16 @@ The sites are created with a `wget` that installs the profile ``plonedemo.site:d
 systemd start/stop
 ==================
 
-For the python 3 instance we use systemd to start/stop the process, here is the config file ``/etc/systemd/system/demo-latest-py3.service``. Useful commands are ``systemctl restart demo-latest-py3.service`` & ``systemctl status demo-latest-py3.service``
+For the python 3 instance we use systemd to start/stop the process the config file is here: ``/etc/systemd/system/demo-latest-py3.service``. 
+
+Useful commands are:
+
+.. code-block:: shell
+
+    $ systemctl restart demo-latest-py3.service
+    $ systemctl status demo-latest-py3.service
+    # logs
+    $ tail -f /var/log/demo.plone.de/*.log
 
 IP & Ports
 ==========
@@ -57,7 +66,7 @@ Changes compared to stock-plone
 
 Among other things the `setuphandler <https://github.com/collective/demo.plone.de/blob/master/src/plonedemo.site/src/plonedemo/site/setuphandlers.py>`_ of ``plonesite.demo`` loads two zexp-files into the site and links the content as translations.
 
-The login-form is overrriden with z3c.jbot to enable autologin with different roles. The users for that are created by the setuphandler.
+The login-form is overriden with z3c.jbot to enable autologin with different roles. The users for that are created by the setuphandler.
 
 Languages
 =========
