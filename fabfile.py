@@ -133,7 +133,7 @@ def setup():
         if env.latest:
             sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/plone/buildout.coredev/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
         else:
-            sudo('./bin/pip install --no-cache-dir -r requirements.txt', user=env.deploy_user)  # noqa: E501
+            sudo('./bin/pip install --no-cache-dir -r https://raw.githubusercontent.com/starzel/buildout/5.2/requirements.txt', user=env.deploy_user)  # noqa: E501
         sudo('./bin/buildout', user=env.deploy_user)
 
         # start supervisor which starts plone instance also
