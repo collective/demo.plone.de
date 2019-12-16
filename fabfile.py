@@ -82,9 +82,9 @@ def start():
     """
     if env.latest:
         if env.python3:
-            sudo('/bin/systemctl start demo-latest.service', shell=False)
-        else:
             sudo('/bin/systemctl start demo-latest-py3', shell=False)
+        else:
+            sudo('/bin/systemctl start demo-latest.service', shell=False)
     else:
         with cd(env.directory):
             sudo('./bin/supervisorctl start zeoserver', user=env.deploy_user)
