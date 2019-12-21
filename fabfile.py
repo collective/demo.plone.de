@@ -69,7 +69,7 @@ def stop():
     if env.latest and not env.python3:
         sudo('/bin/systemctl stop demo-latest.service', shell=False)
     elif env.latest and env.python3:
-        sudo('/bin/systemctl stop demo-latest-py3', shell=False)
+        sudo('/bin/systemctl stop demo-latest-py3.service', shell=False)
     else:
         # demo site is multi instance, cant do supervisor for now
         with cd(env.directory):
