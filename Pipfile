@@ -26,8 +26,8 @@ PyYAML = "==5.2"
 "zc.buildout" = "==2.13.3"
 # TODO
 # https://github.com/pypa/pipenv/issues/2364
-# Force install with pipenv install "setuptools = 42.0.2"
+# Force install with pipenv install "setuptools==42.0.2"
 setuptools = "==42.0.2"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8.3"
