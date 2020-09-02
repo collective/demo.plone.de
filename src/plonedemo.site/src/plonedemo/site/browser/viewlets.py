@@ -51,6 +51,6 @@ class VersionsViewlet(ViewletBase):
 
     def portal_created(self):
         portal = api.portal.get()
-        folder = portal['en']
-        return api.portal.get_localized_time(
-            folder.created(), long_format=True)
+        created_utc = portal.created().toZone('UTC')
+        localized = api.portal.get_localized_time(created_utc, long_format=True)
+        return u'{} UTC'.format(localized)
