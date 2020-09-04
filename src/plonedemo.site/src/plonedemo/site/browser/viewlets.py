@@ -32,11 +32,6 @@ class FrontpageViewlet(ViewletBase):
         return version
 
     def reset_hours(self):
-        version = pkg_resources.parse_version(
-            pkg_resources.get_distribution('Products.CMFPlone').version)
-        is_52 = version >= pkg_resources.parse_version('5.1.999')
-        if is_52:
-            return u'24'
         return u'4'
 
 
@@ -56,6 +51,6 @@ class VersionsViewlet(ViewletBase):
 
     def portal_created(self):
         portal = api.portal.get()
-        folder = portal['en']
-        return api.portal.get_localized_time(
-            folder.created(), long_format=True)
+        created_utc = portal.created().toZone('UTC')
+        localized = api.portal.get_localized_time(created_utc, long_format=True)
+        return u'{} UTC'.format(localized)
