@@ -9,40 +9,7 @@ Is uses the starzel-buildout (https://github.com/starzel/buildout)
 Reset
 =====
 
-On california (KVM host) is a cron (/etc/cron.d/update_demo_plone_de) to execute fabric and reset the page every four hours.
-
-.. code-block:: cron
-
-    SHELL=/bin/sh
-    PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-    MAILTO=bofh@tcs.ifi.lmu.de
-    # cron.daily/update_demo_plone_de -- daily reset of demo site
-    0 0,4,8,12,16,20 * * *  root    /usr/local/bin/fab -f /root/demo.plone.de/fabfile demo_host update >>/var/log/demo.plone 2>&1
-
-On budapest (KVM guest) /home/zope/ runs the plone sites
-
-When this repository has no changes fabric only runs ``./bin/buildout install plonesite`` to speed up things. Otherwise it runs the complete buildout.
-
-The sites are created with a `wget` that installs the profile ``plonedemo.site:default`` which creates some demo-content:
-
-.. code-block:: shell
-
-    /usr/bin/wget -O- --user=admin --password=admin --post-data='site_id=Plone&form.submitted=True&title=Website&default_language=de&portal_timezone=Europe/Berlin&extension_ids=plonetheme.barceloneta:default&extension_ids=plone.app.contenttypes:plone-content&extension_ids=plonedemo.site:default' http://127.0.0.1:8080/@@plone-addsite
-
-
-systemd start/stop
-==================
-
-For the python 3 instance we use systemd to start/stop the process the config file is here: ``/etc/systemd/system/demo-latest-py3.service``. 
-
-Useful commands are:
-
-.. code-block:: shell
-
-    $ systemctl restart demo-latest-py3.service
-    $ systemctl status demo-latest-py3.service
-    # logs
-    $ tail -f /var/log/demo.plone.de/*.log
+Todo: Docu Ansible plone.maintenance (ask @Gomez or @pbauer)
 
 IP & Ports
 ==========
