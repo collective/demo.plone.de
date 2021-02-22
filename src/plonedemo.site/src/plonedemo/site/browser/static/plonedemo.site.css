@@ -26,4 +26,5 @@ body.userrole-anonymous .for_authenticated {
 
 .technical_versions ul {
     padding-left: 0;
+    list-style: none;
 }
