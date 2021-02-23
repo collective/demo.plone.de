@@ -32,9 +32,9 @@
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <p class="for_anonymous"><a class="context pat-plone-modal" href="${navigation_root_url}/login" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}' i18n:translate="">Log in now!</a></p>
+                    <p class="for_anonymous"><a class="btn btn-primary pat-plone-modal" role="button" href="${navigation_root_url}/login" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}' i18n:translate="">Log in now!</a></p>
 
-                    <p class="for_authenticated"><a class="context" href="${navigation_root_url}/logout" i18n:translate="">Log out</a></p>
+                    <p class="for_authenticated"><a class="btn btn-primary" role="button" href="${navigation_root_url}/logout" i18n:translate="">Log out</a></p>
 
                     <dl>
                         <dt i18n:translate="">Manager</dt>

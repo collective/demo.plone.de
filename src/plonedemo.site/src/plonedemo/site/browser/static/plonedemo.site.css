@@ -10,6 +10,7 @@ body.userrole-anonymous .for_authenticated {
 
 .principal.plonedemo {
     padding: 20px 0;
+    background-color: #d9d7d7;
 }
 
 .principal.plonedemo h2 {
@@ -26,4 +27,5 @@ body.userrole-anonymous .for_authenticated {
 
 .technical_versions ul {
     padding-left: 0;
+    list-style: none;
 }
