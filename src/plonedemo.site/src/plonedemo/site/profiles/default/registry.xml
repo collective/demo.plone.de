@@ -16,14 +16,6 @@
 &lt;/script&gt;&#13;
 &lt;noscript&gt;&lt;p&gt;&lt;img src="//piwik.portknox.net/piwik.php?idsite=10" style="border:0;" alt="" /&gt;&lt;/p&gt;&lt;/noscript&gt;&#13;
 &lt;!-- End Piwik Code --&gt;&#13;
-&lt;!-- Start Gitter Chat Code --&gt;&#13;
-&lt;script&gt;&#13;
-  ((window.gitter = {}).chat = {}).options = {&#13;
-    room: 'plone/public'&#13;
-  };&#13;
-&lt;/script&gt;&#13;
-&lt;script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer&gt;&lt;/script&gt;&#13;
-&lt;!-- End Gitter Chat Code --&gt;&#13;
 </value>
   </record>
 
