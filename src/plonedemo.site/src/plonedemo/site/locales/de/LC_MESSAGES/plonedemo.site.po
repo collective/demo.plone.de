@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-11 07:14+0000\n"
+"POT-Creation-Date: 2021-12-15 09:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,135 +14,125 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:19
+#: ../browser/templates/frontpage_viewlet.pt:19
 msgid "About this site"
 msgstr "Über diese Seite"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:31
-msgid "Add ons for Plone"
-msgstr "Erweiterungen für Plone"
-
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:44
+#: ../browser/templates/frontpage_viewlet.pt:43
 msgid "Editor"
 msgstr "Redakteur"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:42
+#: ../browser/templates/frontpage_viewlet.pt:41
 msgid "Editor-in-chief"
 msgstr "Chefredakteur"
 
-#: plonedemo/site/configure.zcml:22
+#: ../browser/templates/frontpage_viewlet.pt:30
+msgid "Forum"
+msgstr ""
+
+#: ../configure.zcml:20
 msgid "Installs the plonedemo.site add-on."
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:35
+#: ../browser/templates/frontpage_viewlet.pt:34
 msgid "Log in now!"
 msgstr "Jetzt einloggen!"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:37
+#: ../browser/templates/frontpage_viewlet.pt:36
 msgid "Log out"
 msgstr "Ausloggen"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:40
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:283
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:40
 msgid "Login as Editor"
 msgstr "Als Redakteur einloggen"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:35
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:278
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:35
 msgid "Login as Editor-in-chief"
 msgstr "Als Chefredakteur einloggen"
 
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:30
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:273
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:30
 msgid "Login as Manager"
 msgstr "Als Administrator einloggen"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:40
+#: ../browser/templates/frontpage_viewlet.pt:39
 msgid "Manager"
 msgstr "Administrator"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:15
+#: ../browser/templates/frontpage_viewlet.pt:15
 msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
 msgstr "Plone &mdash; Das ultimative Open Source Enterprise CMS"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:28
+#: ../browser/templates/frontpage_viewlet.pt:28
 msgid "Plone-Documentation"
 msgstr "Plone-Dokumentation"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:30
+#: ../browser/templates/frontpage_viewlet.pt:29
 msgid "Plone-Training"
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:29
-msgid "Success stories"
-msgstr "Erfolgreiche Projekte mit Plone"
-
-#: plonedemo/site/browser/templates/versions_viewlet.pt:12
+#: ../browser/templates/versions_viewlet.pt:12
 msgid "Technical Details:"
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:27
+#: ../browser/templates/frontpage_viewlet.pt:27
 msgid "The features of Plone"
 msgstr "Die Funktionen von Plone"
 
-#: plonedemo/site/setuphandlers.py:23
+#: ../setuphandlers.py:23
 msgid "The ultimate Open Source Enterprise CMS"
 msgstr "Das ultimative Open Source Enterprise CMS"
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:21
+#: ../browser/templates/frontpage_viewlet.pt:21
 msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every ${reset_hours} hours."
 msgstr "Auf dieser Demo-Webseite können Sie Plone ${plone_version} testen. Die Inhalte werden alle ${reset_hours} Stunden zurückgesetzt."
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:22
+#: ../browser/templates/frontpage_viewlet.pt:22
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Diese Webseite wird von der Plone-Community zur Verfügung gestellt. Verbesserungsvorschläge und Probleme können Sie <a href=\"https://github.com/collective/demo.plone.de/issues\">auf Github melden</a>."
 
-#: plonedemo/site/browser/templates/versions_viewlet.pt:18
+#: ../browser/templates/versions_viewlet.pt:18
 msgid "This site was last reset on:"
 msgstr "Diese Seite wurde erstellt:"
 
-#: plonedemo/site/configure.zcml:31
+#: ../configure.zcml:29
 msgid "Uninstalls the plonedemo.site add-on."
 msgstr ""
 
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:25
+#: ../browser/templates/frontpage_viewlet.pt:25
 msgid "Want to know more?"
 msgstr "Sie wollen mehr erfahren?"
 
-#: plonedemo/site/setuphandlers.py:22
+#: ../setuphandlers.py:22
 msgid "Welcome to Plone"
 msgstr "Willkommen bei Plone"
 
 #. Default: "Create, edit and submit content."
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:285
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:45
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
+#: ../browser/templates/frontpage_viewlet.pt:44
 msgid "description_editor"
 msgstr "Inhalte erstellen, bearbeiten und einreichen."
 
 #. Default: "Create, edit and publish content."
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:280
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:43
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
+#: ../browser/templates/frontpage_viewlet.pt:42
 msgid "description_editor_in_chief"
 msgstr "Inhalte erstellen, bearbeiten und veröffentlichen."
 
 #. Default: "Manage content, users, addons and settings."
-#: plonedemo/site/browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
-#: plonedemo/site/browser/overrides/Products.CMFPlone.skins.plone_login.login_form.cpt:275
-#: plonedemo/site/browser/templates/frontpage_viewlet.pt:41
+#: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
+#: ../browser/templates/frontpage_viewlet.pt:40
 msgid "description_manager"
 msgstr "Inhalte, Benutzer, Erweiterungen und Einstellungen verwalten."
 
-#: plonedemo/site/configure.zcml:22
+#: ../configure.zcml:20
 msgid "plonedemo.site"
 msgstr ""
 
-#: plonedemo/site/configure.zcml:31
+#: ../configure.zcml:29
 msgid "plonedemo.site - uninstall"
 msgstr ""
 
 #. Default: "<p>Edit this site and test Plone now!</p>"
-#: plonedemo/site/browser/templates/frontpage.pt:10
+#: ../browser/templates/frontpage.pt:10
 msgid "plonedemo_frontpage"
 msgstr "<p>Bearbeiten Sie diese Seite und testen Sie Plone jetzt!</p>"
