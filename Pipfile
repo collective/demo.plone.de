@@ -6,11 +6,11 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-"zc.buildout" = "==2.13.3"
+"zc.buildout" = "==3.0.0rc2"
 # TODO
 # https://github.com/pypa/pipenv/issues/2364
-# Force install with pipenv install "setuptools==50.3.0"
-setuptools = "==50.3.0"
+# Force install with pipenv install "setuptools==59.8.0"
+setuptools = "==59.8.0"
 
 [requires]
 python_version = "3.8.3"
