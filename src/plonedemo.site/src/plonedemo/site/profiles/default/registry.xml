@@ -54,6 +54,12 @@
     <value>True</value>
   </record>
 
+  <record name="plone.displayed_types" >
+    <value purge="false">
+      <element>Collection</element>
+    </value>
+  </record>
+
   <records prefix="plone.bundles/plonedemo-bundle"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="enabled">True</value>
