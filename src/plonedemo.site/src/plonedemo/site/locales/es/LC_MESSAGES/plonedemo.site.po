@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-12-15 09:04+0000\n"
+"POT-Creation-Date: 2022-05-20 06:10+0000\n"
 "PO-Revision-Date: 2017-06-21 16:59+0200\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
@@ -20,15 +20,19 @@ msgstr ""
 msgid "About this site"
 msgstr "Sobre este sitio"
 
-#: ../browser/templates/frontpage_viewlet.pt:43
+#: ../browser/templates/frontpage_viewlet.pt:37
+msgid "Add-ons for Plone"
+msgstr ""
+
+#: ../browser/templates/frontpage_viewlet.pt:51
 msgid "Editor"
 msgstr "Editor"
 
-#: ../browser/templates/frontpage_viewlet.pt:41
+#: ../browser/templates/frontpage_viewlet.pt:49
 msgid "Editor-in-chief"
 msgstr "Editor-en-jefe"
 
-#: ../browser/templates/frontpage_viewlet.pt:30
+#: ../browser/templates/frontpage_viewlet.pt:36
 msgid "Forum"
 msgstr ""
 
@@ -36,11 +40,11 @@ msgstr ""
 msgid "Installs the plonedemo.site add-on."
 msgstr "Installs the plonedemo.site add-on."
 
-#: ../browser/templates/frontpage_viewlet.pt:34
+#: ../browser/templates/frontpage_viewlet.pt:42
 msgid "Log in now!"
 msgstr "¡Entra ahora!"
 
-#: ../browser/templates/frontpage_viewlet.pt:36
+#: ../browser/templates/frontpage_viewlet.pt:44
 msgid "Log out"
 msgstr "Salir"
 
@@ -56,19 +60,35 @@ msgstr "Entrar como Editor-en-jefe"
 msgid "Login as Manager"
 msgstr "Entrar como Administrador"
 
-#: ../browser/templates/frontpage_viewlet.pt:39
+#: ../browser/templates/frontpage_viewlet.pt:47
 msgid "Manager"
 msgstr "Administrador"
+
+#: ../browser/templates/frontpage_viewlet.pt:22
+msgid "More demo sites"
+msgstr ""
 
 #: ../browser/templates/frontpage_viewlet.pt:15
 msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
 msgstr "Plone &mdash; El Sistema de Gestión de Contenido de Fuentes Abiertas"
 
-#: ../browser/templates/frontpage_viewlet.pt:28
+#: ../browser/templates/frontpage_viewlet.pt:24
+msgid "Plone 5.2 (stable)"
+msgstr ""
+
+#: ../browser/templates/frontpage_viewlet.pt:25
+msgid "Plone 6 (nightly build)"
+msgstr ""
+
+#: ../browser/templates/frontpage_viewlet.pt:26
+msgid "Plone 6 Classic (nightly build)"
+msgstr ""
+
+#: ../browser/templates/frontpage_viewlet.pt:34
 msgid "Plone-Documentation"
 msgstr "Documentación Plone"
 
-#: ../browser/templates/frontpage_viewlet.pt:29
+#: ../browser/templates/frontpage_viewlet.pt:35
 msgid "Plone-Training"
 msgstr "Cursos Plone"
 
@@ -76,7 +96,7 @@ msgstr "Cursos Plone"
 msgid "Technical Details:"
 msgstr "Detalles técnicos:"
 
-#: ../browser/templates/frontpage_viewlet.pt:27
+#: ../browser/templates/frontpage_viewlet.pt:33
 msgid "The features of Plone"
 msgstr "Características de Plone"
 
@@ -88,7 +108,7 @@ msgstr "El Sistema de Gestión de Contenido de Fuentes Abiertas"
 msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every ${reset_hours} hours."
 msgstr "Esta es una página de demostración donde puedes probar Plone ${plone_version}. La página se restaurará cada ${reset_hours} horas."
 
-#: ../browser/templates/frontpage_viewlet.pt:22
+#: ../browser/templates/frontpage_viewlet.pt:39
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr "Esta es una página preparada por la Comunidad Plone. Si tienes sugerencias o problemas <a href=\"https://github.com/collective/demo.plone.de/issues\">envíanoslas</a> a través de github."
 
@@ -100,7 +120,7 @@ msgstr "Última vez en la que se restableció este sitio:"
 msgid "Uninstalls the plonedemo.site add-on."
 msgstr "<a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 
-#: ../browser/templates/frontpage_viewlet.pt:25
+#: ../browser/templates/frontpage_viewlet.pt:31
 msgid "Want to know more?"
 msgstr "¿Quieres saber más?"
 
@@ -110,19 +130,19 @@ msgstr "Bienvenido a Plone"
 
 #. Default: "Create, edit and submit content."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
-#: ../browser/templates/frontpage_viewlet.pt:44
+#: ../browser/templates/frontpage_viewlet.pt:52
 msgid "description_editor"
 msgstr "Crear, modificar y enviar contenido para su publicación"
 
 #. Default: "Create, edit and publish content."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
-#: ../browser/templates/frontpage_viewlet.pt:42
+#: ../browser/templates/frontpage_viewlet.pt:50
 msgid "description_editor_in_chief"
 msgstr "Crear, modificar y publicar contenido"
 
 #. Default: "Manage content, users, addons and settings."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
-#: ../browser/templates/frontpage_viewlet.pt:40
+#: ../browser/templates/frontpage_viewlet.pt:48
 msgid "description_manager"
 msgstr "Gestionar contenido, usuarios, complementos y configuración"
 
