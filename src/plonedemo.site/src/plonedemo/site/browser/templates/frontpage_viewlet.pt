@@ -34,7 +34,7 @@
                         <li><a i18n:translate="" class="link-plain" href="https://docs.plone.org" target="_blank">Plone-Documentation</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://training.plone.org" target="_blank">Plone-Training</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://community.plone.org" target="_blank">Forum</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="https://github.com/collective/awesome-plone" target="_blank">Add-ons for Plone</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://github.com/collective/awesome-plone#contents" target="_blank">Add-ons for Plone</a></li>
                     </ul>
                     <p class="small" i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
                 </div>
