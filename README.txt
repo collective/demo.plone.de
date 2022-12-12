@@ -1,8 +1,8 @@
-====================
-demo.plone.de
-====================
+==============
+demo.plone.org
+==============
 
-This is the buildout and package used for demo.plone.de
+This is the buildout and package used for demo.plone.org
 
 Is uses the starzel-buildout (https://github.com/starzel/buildout)
 
@@ -14,19 +14,16 @@ Todo: Docu Ansible plone.maintenance (ask @Gomez or @pbauer)
 IP & Ports
 ==========
 
-**demo.plone.de (Plone: lastest stable, Python: 3.7)**
+**demo.plone.org (Plone: lastest stable, Python: 3.11)**
 
 - zeoclient1: 127.0.0.1:8082
 - zeoclient2: 127.0.0.1:8083
 - zeoserver:  127.0.0.1:8090
 
-**demo-latest.plone.de (Plone: 5.2, Python: 2.7)**
+**classic.demo.plone.org (Plone: 6.0.x, Python: 3.11)**
 
 - instance: 127.0.0.1:8072
 
-**demo-latest-py3.plone.de (Plone: 5.2, Python 3.6)**
-
-- instance: 127.0.0.1:8062
 
 Changes compared to stock-plone
 ===============================
