@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-20 06:13+0000\n"
+"POT-Creation-Date: 2022-12-13 11:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,23 +14,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ../browser/templates/frontpage_viewlet.pt:35
+msgid "About Plone"
+msgstr ""
+
 #: ../browser/templates/frontpage_viewlet.pt:19
 msgid "About this site"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:37
+#: ../browser/templates/frontpage_viewlet.pt:39
 msgid "Add-ons for Plone"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:51
+#: ../browser/templates/frontpage_viewlet.pt:36
+msgid "Documentation"
+msgstr ""
+
+#: ../browser/templates/frontpage_viewlet.pt:53
 msgid "Editor"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:49
+#: ../browser/templates/frontpage_viewlet.pt:51
 msgid "Editor-in-chief"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:36
+#: ../browser/templates/frontpage_viewlet.pt:38
 msgid "Forum"
 msgstr ""
 
@@ -38,11 +46,11 @@ msgstr ""
 msgid "Installs the plonedemo.site add-on."
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:42
+#: ../browser/templates/frontpage_viewlet.pt:44
 msgid "Log in now!"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:44
+#: ../browser/templates/frontpage_viewlet.pt:46
 msgid "Log out"
 msgstr ""
 
@@ -58,7 +66,7 @@ msgstr ""
 msgid "Login as Manager"
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:47
+#: ../browser/templates/frontpage_viewlet.pt:49
 msgid "Manager"
 msgstr ""
 
@@ -70,32 +78,20 @@ msgstr ""
 msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
 msgstr ""
 
+#: ../browser/templates/frontpage_viewlet.pt:26
+msgid "Plone 5.2"
+msgstr ""
+
 #: ../browser/templates/frontpage_viewlet.pt:24
-msgid "Plone 5.2 (stable)"
+msgid "Plone 6"
 msgstr ""
 
 #: ../browser/templates/frontpage_viewlet.pt:25
-msgid "Plone 6 (nightly build)"
-msgstr ""
-
-#: ../browser/templates/frontpage_viewlet.pt:26
-msgid "Plone 6 Classic (nightly build)"
-msgstr ""
-
-#: ../browser/templates/frontpage_viewlet.pt:34
-msgid "Plone-Documentation"
-msgstr ""
-
-#: ../browser/templates/frontpage_viewlet.pt:35
-msgid "Plone-Training"
+msgid "Plone 6 Classic UI"
 msgstr ""
 
 #: ../browser/templates/versions_viewlet.pt:12
 msgid "Technical Details:"
-msgstr ""
-
-#: ../browser/templates/frontpage_viewlet.pt:33
-msgid "The features of Plone"
 msgstr ""
 
 #: ../setuphandlers.py:23
@@ -106,7 +102,7 @@ msgstr ""
 msgid "This is a demo-site where you can test Plone ${plone_version}. The site will be reset every ${reset_hours} hours."
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:39
+#: ../browser/templates/frontpage_viewlet.pt:41
 msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
 msgstr ""
 
@@ -114,11 +110,15 @@ msgstr ""
 msgid "This site was last reset on:"
 msgstr ""
 
+#: ../browser/templates/frontpage_viewlet.pt:37
+msgid "Training"
+msgstr ""
+
 #: ../configure.zcml:29
 msgid "Uninstalls the plonedemo.site add-on."
 msgstr ""
 
-#: ../browser/templates/frontpage_viewlet.pt:31
+#: ../browser/templates/frontpage_viewlet.pt:33
 msgid "Want to know more?"
 msgstr ""
 
@@ -128,19 +128,19 @@ msgstr ""
 
 #. Default: "Create, edit and submit content."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:42
-#: ../browser/templates/frontpage_viewlet.pt:52
+#: ../browser/templates/frontpage_viewlet.pt:54
 msgid "description_editor"
 msgstr ""
 
 #. Default: "Create, edit and publish content."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:37
-#: ../browser/templates/frontpage_viewlet.pt:50
+#: ../browser/templates/frontpage_viewlet.pt:52
 msgid "description_editor_in_chief"
 msgstr ""
 
 #. Default: "Manage content, users, addons and settings."
 #: ../browser/overrides/Products.CMFPlone.browser.login.templates.login.pt:32
-#: ../browser/templates/frontpage_viewlet.pt:48
+#: ../browser/templates/frontpage_viewlet.pt:50
 msgid "description_manager"
 msgstr ""
 
