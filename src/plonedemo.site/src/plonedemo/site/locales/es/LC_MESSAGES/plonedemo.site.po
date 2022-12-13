@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-20 06:10+0000\n"
+"POT-Creation-Date: 2022-12-13 11:13+0000\n"
 "PO-Revision-Date: 2017-06-21 16:59+0200\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: \n"
@@ -72,16 +72,16 @@ msgstr ""
 msgid "Plone &mdash; The ultimate Open Source Enterprise CMS"
 msgstr "Plone &mdash; El Sistema de Gestión de Contenido de Fuentes Abiertas"
 
+#: ../browser/templates/frontpage_viewlet.pt:26
+msgid "Plone 5.2"
+msgstr ""
+
 #: ../browser/templates/frontpage_viewlet.pt:24
-msgid "Plone 5.2 (stable)"
+msgid "Plone 6"
 msgstr ""
 
 #: ../browser/templates/frontpage_viewlet.pt:25
-msgid "Plone 6 (nightly build)"
-msgstr ""
-
-#: ../browser/templates/frontpage_viewlet.pt:26
-msgid "Plone 6 Classic (nightly build)"
+msgid "Plone 6 Classic UI"
 msgstr ""
 
 #: ../browser/templates/frontpage_viewlet.pt:34

@@ -21,16 +21,16 @@
                     The site will be reset every <span i18n:name="reset_hours" tal:replace="view/reset_hours">4</span> hours.</p>
                     <h5 i18n:translate="">More demo sites</h5>
                     <ul>
-                        <li><a i18n:translate="" class="link-plain" href="https://demo.plone.org" target="_blank">Plone 5.2 (stable)</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="https://6.demo.plone.org" target="_blank">Plone 6 (nightly build)</a></li>
-                        <li><a i18n:translate="" class="link-plain" href="https://6-classic.demo.plone.org" target="_blank">Plone 6 Classic (nightly build)</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://demo.plone.org" target="_blank">Plone 6</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://classic.demo.plone.org" target="_blank">Plone 6 Classic UI</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://52.demo.plone.org" target="_blank">Plone 5.2</a></li>
                     </ul>
 
                 </div>
                 <div class="col-xs-12 col-sm-6  col-md-4">
                     <h5 i18n:translate="">Want to know more?</h5>
                     <ul>
-                        <li><a i18n:translate="" class="link-plain" href="https://plone.com/features.html" target="_blank">The features of Plone</a></li>
+                        <li><a i18n:translate="" class="link-plain" href="https://plone.org/why-plone/features" target="_blank">The features of Plone</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://docs.plone.org" target="_blank">Plone-Documentation</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://training.plone.org" target="_blank">Plone-Training</a></li>
                         <li><a i18n:translate="" class="link-plain" href="https://community.plone.org" target="_blank">Forum</a></li>
